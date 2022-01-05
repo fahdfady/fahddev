@@ -2,14 +2,22 @@
 @import url("reset.css");
 /*==================== VARIABLES CSS ====================*/
 :root {
+  --main-color: #fff;
+  --secondary-color: rgb(139, 107, 209);
+  --secondary-color-faded: rgba(139, 107, 209, .6);
+  --text-color: #000;
+  --min-width: 80%;
   --max-width: 1200px;
   --max-height: 600px;
   --font-family: 'Inter', sans-serif;
+  --font-size-title: 22px;
+  --font-size-icon: 32px;
   --default-padding: 20px;
   --bg-color: #F0F0F0;
   --border-radius: 6px;
   --animation-timing: .2s;
   --shadow-default: 0 0 5px 3px rgba(0, 0, 0, .1);
+  --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
 }
 
 * {
@@ -17,11 +25,63 @@
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 /* Font size for large devices */
-section {
+body {
   font-family: var(--font-family);
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+header a {
+  -webkit-transition: .15s all linear;
+  transition: .15s all linear;
+}
+
+header .logo {
+  font-size: var(--font-size-title);
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+header .logo:hover {
+  color: var(--text-color);
+}
+
+header nav.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav.navbar a {
+  text-decoration: none;
+  margin: 0px 4px;
+  color: var(--text-color);
+}
+
+header nav.navbar a:hover {
+  color: var(--secondary-color);
+}
+
+main section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,18 +96,23 @@ section {
   min-height: 100vh;
 }
 
-section.containerActive .textFeild,
-section.containerActive .imageFeild {
+main section.containerActive .textFeild,
+main section.containerActive .imageFeild {
   -webkit-transform: translateY(0px) !important;
           transform: translateY(0px) !important;
   opacity: 1 !important;
   visibility: visible !important;
 }
 
-section .content {
+main section .content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: var(--min-width);
   max-width: var(--max-width);
   padding: calc(var(--default-padding) * 2);
   -webkit-box-shadow: var(--shadow-default);
@@ -59,7 +124,7 @@ section .content {
   background-position: bottom left;
 }
 
-section .content .textFeild {
+main section .content .textFeild {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -81,7 +146,7 @@ section .content .textFeild {
   transition: all 1s;
 }
 
-section .content .textFeild p.text {
+main section .content .textFeild p.text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,23 +156,23 @@ section .content .textFeild p.text {
   margin-bottom: 10px;
 }
 
-section .content .textFeild .authorInfo {
+main section .content .textFeild .authorInfo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-section .content .textFeild .authorInfo .authorName {
+main section .content .textFeild .authorInfo .authorName {
   font-weight: 700;
 }
 
-section .content .textFeild .authorInfo .authorJob {
+main section .content .textFeild .authorInfo .authorJob {
   font-weight: 500;
   margin-left: 5px;
   color: #747376;
 }
 
-section .content .textFeild .socialLinks {
+main section .content .textFeild .socialLinks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,7 +182,7 @@ section .content .textFeild .socialLinks {
   margin-top: 40px;
 }
 
-section .content .textFeild .socialLinks a {
+main section .content .textFeild .socialLinks a {
   background: #000;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,12 +204,173 @@ section .content .textFeild .socialLinks a {
   color: #fff;
 }
 
-section .content .textFeild .socialLinks a:hover {
-  background: #fff;
+main section .content .textFeild .socialLinks a:hover {
+  background: transparent;
   color: #000;
 }
 
-section .imageFeild {
+main section .content .info-container,
+main section .content .skills-container,
+main section .content .projects-container,
+main section .content .contact-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main section .content .skills-container,
+main section .content .projects-container,
+main section .content .contact-container {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: clc(var(--default-padding)/2);
+}
+
+main section .content .skills-container .skill,
+main section .content .skills-container .project,
+main section .content .skills-container .contact,
+main section .content .projects-container .skill,
+main section .content .projects-container .project,
+main section .content .projects-container .contact,
+main section .content .contact-container .skill,
+main section .content .contact-container .project,
+main section .content .contact-container .contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 15px 18px;
+  padding: 8px;
+  padding-bottom: 0px;
+  -webkit-box-shadow: var(--shadow-default);
+          box-shadow: var(--shadow-default);
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: .15s all linear;
+  transition: .15s all linear;
+}
+
+main section .content .skills-container .skill .skillTitle,
+main section .content .skills-container .skill .projectTitle,
+main section .content .skills-container .skill .contactTitle,
+main section .content .skills-container .project .skillTitle,
+main section .content .skills-container .project .projectTitle,
+main section .content .skills-container .project .contactTitle,
+main section .content .skills-container .contact .skillTitle,
+main section .content .skills-container .contact .projectTitle,
+main section .content .skills-container .contact .contactTitle,
+main section .content .projects-container .skill .skillTitle,
+main section .content .projects-container .skill .projectTitle,
+main section .content .projects-container .skill .contactTitle,
+main section .content .projects-container .project .skillTitle,
+main section .content .projects-container .project .projectTitle,
+main section .content .projects-container .project .contactTitle,
+main section .content .projects-container .contact .skillTitle,
+main section .content .projects-container .contact .projectTitle,
+main section .content .projects-container .contact .contactTitle,
+main section .content .contact-container .skill .skillTitle,
+main section .content .contact-container .skill .projectTitle,
+main section .content .contact-container .skill .contactTitle,
+main section .content .contact-container .project .skillTitle,
+main section .content .contact-container .project .projectTitle,
+main section .content .contact-container .project .contactTitle,
+main section .content .contact-container .contact .skillTitle,
+main section .content .contact-container .contact .projectTitle,
+main section .content .contact-container .contact .contactTitle {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 12px 0px;
+}
+
+main section .content .skills-container .skill .skillIcon img,
+main section .content .skills-container .skill .contactIcon img,
+main section .content .skills-container .project .skillIcon img,
+main section .content .skills-container .project .contactIcon img,
+main section .content .skills-container .contact .skillIcon img,
+main section .content .skills-container .contact .contactIcon img,
+main section .content .projects-container .skill .skillIcon img,
+main section .content .projects-container .skill .contactIcon img,
+main section .content .projects-container .project .skillIcon img,
+main section .content .projects-container .project .contactIcon img,
+main section .content .projects-container .contact .skillIcon img,
+main section .content .projects-container .contact .contactIcon img,
+main section .content .contact-container .skill .skillIcon img,
+main section .content .contact-container .skill .contactIcon img,
+main section .content .contact-container .project .skillIcon img,
+main section .content .contact-container .project .contactIcon img,
+main section .content .contact-container .contact .skillIcon img,
+main section .content .contact-container .contact .contactIcon img {
+  width: 150px;
+}
+
+main section .content .skills-container .skill .skillIcon i,
+main section .content .skills-container .skill .contactIcon i,
+main section .content .skills-container .project .skillIcon i,
+main section .content .skills-container .project .contactIcon i,
+main section .content .skills-container .contact .skillIcon i,
+main section .content .skills-container .contact .contactIcon i,
+main section .content .projects-container .skill .skillIcon i,
+main section .content .projects-container .skill .contactIcon i,
+main section .content .projects-container .project .skillIcon i,
+main section .content .projects-container .project .contactIcon i,
+main section .content .projects-container .contact .skillIcon i,
+main section .content .projects-container .contact .contactIcon i,
+main section .content .contact-container .skill .skillIcon i,
+main section .content .contact-container .skill .contactIcon i,
+main section .content .contact-container .project .skillIcon i,
+main section .content .contact-container .project .contactIcon i,
+main section .content .contact-container .contact .skillIcon i,
+main section .content .contact-container .contact .contactIcon i {
+  font-size: var(--font-size-icon);
+}
+
+main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+  width: 300px;
+}
+
+main section .content .skills-container .skill:hover, main section .content .skills-container .skill:focus,
+main section .content .skills-container .project:hover,
+main section .content .skills-container .project:focus,
+main section .content .skills-container .contact:hover,
+main section .content .skills-container .contact:focus,
+main section .content .projects-container .skill:hover,
+main section .content .projects-container .skill:focus,
+main section .content .projects-container .project:hover,
+main section .content .projects-container .project:focus,
+main section .content .projects-container .contact:hover,
+main section .content .projects-container .contact:focus,
+main section .content .contact-container .skill:hover,
+main section .content .contact-container .skill:focus,
+main section .content .contact-container .project:hover,
+main section .content .contact-container .project:focus,
+main section .content .contact-container .contact:hover,
+main section .content .contact-container .contact:focus {
+  -webkit-box-shadow: var(--shadow-hover);
+          box-shadow: var(--shadow-hover);
+}
+
+main section .content .contact {
+  min-width: 40%;
+}
+
+main section .imageFeild {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -172,13 +398,20 @@ section .imageFeild {
   /*to give a 3d effect*/
 }
 
-section .imageFeild .image {
+main section .imageFeild .image {
   width: 100%;
   border-radius: var(--border-radius);
   -webkit-box-shadow: var(--shadow-default);
           box-shadow: var(--shadow-default);
   -webkit-transition: all .1s;
   transition: all .1s;
+}
+
+main section .sectionTitle {
+  font-size: var(--font-size-title);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: auto;
 }
 
 @media (max-width: 760px) {
