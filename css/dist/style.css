@@ -4,20 +4,26 @@
 :root {
   --main-color: #fff;
   --secondary-color: rgb(139, 107, 209);
-  --secondary-color-faded: rgba(139, 107, 209, .6);
+  --secondary-color-faded: rgba(139, 107, 209, 0.6);
   --text-color: #000;
   --min-width: 80%;
   --max-width: 1200px;
-  --max-height: 600px;
+  --min-height: 600px;
   --font-family: "Inter", sans-serif;
   --font-size-title: 22px;
   --font-size-icon: 32px;
   --default-padding: 20px;
-  --bg-color: #F0F0F0;
+  --phone-padding: 8px;
+  --bg-color: #f0f0f0;
   --border-radius: 6px;
-  --animation-timing: .2s;
-  --shadow-default: 0 0 5px 3px rgba(0, 0, 0, .1);
+  --animation-timing: 0.2s;
+  --shadow-default: 0 0 5px 3px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
+}
+
+::selection {
+  background: var(--secondary-color);
+  color: var(--bg-color);
 }
 
 * {
@@ -35,33 +41,47 @@ body {
 }
 
 header {
+  background: #f8f8f8;
+  padding: 0px 10px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 header a {
   transition: 0.15s all linear;
 }
-header .logo {
+header nav.navbar {
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav.navbar .logo {
   font-size: var(--font-size-title);
   font-weight: bold;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--secondary-color);
 }
-header .logo:hover {
+header nav.navbar .logo:hover {
   color: var(--text-color);
 }
-header nav.navbar {
+header nav.navbar ul {
   display: flex;
+  gap: 0px 8px;
 }
-header nav.navbar a {
+header nav.navbar ul li a {
   text-decoration: none;
-  margin: 0px 4px;
   color: var(--text-color);
 }
-header nav.navbar a:hover {
+header nav.navbar ul li a:hover {
   color: var(--secondary-color);
 }
 
@@ -81,9 +101,11 @@ main section.containerActive .imageFeild {
 }
 main section .content {
   display: flex;
+  justify-content: center;
   flex-direction: column;
   min-width: var(--min-width);
   max-width: var(--max-width);
+  min-height: var(--min-height);
   padding: calc(var(--default-padding) * 2);
   box-shadow: var(--shadow-default);
   border-radius: var(--border-radius);
@@ -166,9 +188,10 @@ main section .content .projects-container .contact,
 main section .content .contact-container .skill,
 main section .content .contact-container .project,
 main section .content .contact-container .contact {
+  position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   margin: 15px 18px;
   padding: 8px;
   padding-bottom: 0px;
@@ -176,6 +199,63 @@ main section .content .contact-container .contact {
   text-decoration: none;
   color: #000;
   transition: 0.15s all linear;
+}
+main section .content .skills-container .skill .ribbon,
+main section .content .skills-container .project .ribbon,
+main section .content .skills-container .contact .ribbon,
+main section .content .projects-container .skill .ribbon,
+main section .content .projects-container .project .ribbon,
+main section .content .projects-container .contact .ribbon,
+main section .content .contact-container .skill .ribbon,
+main section .content .contact-container .project .ribbon,
+main section .content .contact-container .contact .ribbon {
+  position: absolute;
+  top: -4px;
+  right: 5px;
+  z-index: 99;
+  background: var(--secondary-color);
+  color: #fff;
+  padding: 10px;
+}
+main section .content .skills-container .skill .ribbon::after,
+main section .content .skills-container .project .ribbon::after,
+main section .content .skills-container .contact .ribbon::after,
+main section .content .projects-container .skill .ribbon::after,
+main section .content .projects-container .project .ribbon::after,
+main section .content .projects-container .contact .ribbon::after,
+main section .content .contact-container .skill .ribbon::after,
+main section .content .contact-container .project .ribbon::after,
+main section .content .contact-container .contact .ribbon::after {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 0 4px;
+  -webkit-transform: rotate(270deg);
+  transform: rotate(270deg);
+  border-color: transparent transparent transparent #634e5b;
+}
+main section .content .skills-container .skill .ribbon::before,
+main section .content .skills-container .project .ribbon::before,
+main section .content .skills-container .contact .ribbon::before,
+main section .content .projects-container .skill .ribbon::before,
+main section .content .projects-container .project .ribbon::before,
+main section .content .projects-container .contact .ribbon::before,
+main section .content .contact-container .skill .ribbon::before,
+main section .content .contact-container .project .ribbon::before,
+main section .content .contact-container .contact .ribbon::before {
+  content: "";
+  position: absolute;
+  right: -4px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4px 0 0 4px;
+  border-color: transparent transparent transparent #634e5b;
 }
 main section .content .skills-container .skill .skillTitle,
 main section .content .skills-container .skill .projectTitle,
@@ -248,6 +328,17 @@ main section .content .contact-container .contact .skillIcon i,
 main section .content .contact-container .contact .contactIcon i {
   font-size: var(--font-size-icon);
 }
+main section .content .skills-container .skill .projectIcon,
+main section .content .skills-container .project .projectIcon,
+main section .content .skills-container .contact .projectIcon,
+main section .content .projects-container .skill .projectIcon,
+main section .content .projects-container .project .projectIcon,
+main section .content .projects-container .contact .projectIcon,
+main section .content .contact-container .skill .projectIcon,
+main section .content .contact-container .project .projectIcon,
+main section .content .contact-container .contact .projectIcon {
+  position: relative;
+}
 main section .content .skills-container .skill .projectIcon img,
 main section .content .skills-container .project .projectIcon img,
 main section .content .skills-container .contact .projectIcon img,
@@ -283,7 +374,7 @@ main section .content .contact {
 }
 main section .imageFeild {
   flex: 1;
-  max-width: 540px;
+  max-width: 60%;
   display: flex;
   align-items: center;
   padding: 50px;
@@ -309,7 +400,11 @@ main section .sectionTitle {
   font-size: var(--font-size-title);
   text-transform: uppercase;
   font-weight: bold;
-  margin: auto;
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 760px) {
@@ -348,5 +443,23 @@ main section .sectionTitle {
   .socialLinks a {
     width: 35px;
     box-shadow: var(--shadow-default);
+  }
+}
+@media (max-width: 480px) {
+  header nav.navbar {
+    padding: 0px;
+  }
+  header nav.navbar ul {
+    gap: 0px 6px;
+  }
+  header nav.navbar ul li a {
+    font-size: 14px;
+  }
+
+  main section .content {
+    padding: var(--phone-padding);
+  }
+  main section .content .contact {
+    width: 100%;
   }
 }
