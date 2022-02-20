@@ -5,6 +5,7 @@
   --main-color: #fff;
   --secondary-color: rgb(139, 107, 209);
   --secondary-color-faded: rgba(139, 107, 209, 0.6);
+  --third-color: rgb(61, 38, 112);
   --text-color: #000;
   --min-width: 80%;
   --max-width: 1200px;
@@ -26,10 +27,13 @@
   color: var(--bg-color);
 }
 
-* {
-  padding: 0;
-  margin: 0;
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   scroll-behavior: smooth;
 }
 
@@ -40,15 +44,117 @@ body {
   text-transform: capitalize;
 }
 
-header {
-  background: #f8f8f8;
-  padding: 0px 10px;
-  height: 50px;
+.page-container {
+  position: relative;
+}
+
+.loader-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99999;
+  width: 100%;
+  background: #fff;
+  height: 100%;
+  z-index: 10000000000000000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loaded .loader-wrapper {
+  visibility: hidden;
+  transform: translateY(-100%);
+  transition: all 0.3s 1s ease-out;
+}
+.loaded .loader-wrapper .loader {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.loader-wrapper .loader {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 75px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.loader-wrapper .loader .loader-outter {
+  position: absolute;
+  border: 4px solid #8b6bd1;
+  border-left-color: transparent;
+  border-bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+  animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+.loader-wrapper .loader .loader-inner {
+  position: absolute;
+  border: 4px solid #8b6bd1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  left: calc(50% - 20px);
+  top: calc(50% - 20px);
+  border-right: 0;
+  border-top-color: transparent;
+  -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+  animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+}
+
+@keyframes loader-outter {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader-inner {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+  }
+}
+.cursor-container .cursor {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  -webkit-transition: none;
+  transition: 0.09s;
+  pointer-events: none;
+  z-index: 200;
+}
+.cursor-container .dot {
+  width: 5px;
+  height: 5px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: none;
+  transition: none;
+  pointer-events: none;
+  z-index: 100;
+}
+
+header {
+  position: relative;
+  padding: 0px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,8 +163,15 @@ header a {
   transition: 0.15s all linear;
 }
 header nav.navbar {
+  background: #f8f8f8;
   width: 100%;
   padding: 0px 20px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -93,12 +206,6 @@ main section {
   background-color: var(--bg-color);
   min-height: 100vh;
 }
-main section.containerActive .textFeild,
-main section.containerActive .imageFeild {
-  transform: translateY(0px) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
 main section .content {
   display: flex;
   justify-content: center;
@@ -120,8 +227,6 @@ main section .content .textFeild {
   flex-direction: column;
   justify-content: center;
   transform: translateY(-20px);
-  /*animation done*/
-  opacity: 0;
   transition: all 1s;
 }
 main section .content .textFeild p.text {
@@ -192,8 +297,8 @@ main section .content .contact-container .contact {
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 15px 18px;
   padding: 8px;
+  margin: 15px 18px;
   padding-bottom: 0px;
   box-shadow: var(--shadow-default);
   text-decoration: none;
@@ -383,17 +488,12 @@ main section .imageFeild {
   background-image: url("../img/pattern-bg.svg");
   background-repeat: no-repeat;
   transform: translateY(20px);
-  /*animation done*/
-  opacity: 0;
-  visibility: hidden;
   transition: all 1s;
-  perspective: 1000px;
-  /*to give a 3d effect*/
 }
 main section .imageFeild .image {
   width: 100%;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-default);
+  filter: drop-shadow(0px 10px 6px #000);
   transition: all 0.1s;
 }
 main section .sectionTitle {
@@ -407,45 +507,119 @@ main section .sectionTitle {
   align-items: center;
 }
 
-@media (max-width: 760px) {
-  section {
-    flex-direction: column-reverse;
-    padding: 10px;
+footer.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg-color);
+  color: #6c757d;
+  width: 100%;
+  user-select: none;
+  text-align: center;
+}
+footer.page-footer ul.socialMedia {
+  margin: auto;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 13px;
+}
+footer.page-footer ul.socialMedia a {
+  font-size: 1.313rem;
+  color: #55616c;
+}
+footer.page-footer ul.socialMedia a::hover {
+  color: #323330;
+  transition: 0.2s all ease-in-out;
+}
+footer.page-footer p.email {
+  user-select: text;
+  font-size: 16px;
+  margin: 10px 0px;
+}
+footer.page-footer p.name {
+  font-size: 20px;
+  padding: 10px;
+}
+
+@media (max-width: 960px) {
+  .cursor,
+.dot {
+    display: none;
   }
 
-  .content {
-    flex-direction: column-reverse;
+  main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+    width: 275px;
+  }
+}
+@media (max-width: 768px) {
+  main section {
+    flex-direction: column;
+    padding: 10px;
+  }
+  main section .imageFeild {
+    padding: 30px;
+    margin: 0 -10px;
+  }
+  main section .content {
+    flex-direction: column;
     height: auto;
     max-height: inherit;
-    padding: 20px;
+    padding: 15px;
+  }
+  main section .content .info-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 60px 0px;
+  }
+  main section .content .info-container .textFeild .authorInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  main section .content .info-container .textFeild .authorJob {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+  main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+    width: 270px;
   }
 
   p.text {
     font-size: 22px;
     line-height: 32px;
   }
-
-  .imageFeild {
-    padding: 30px;
-    margin: 0 -10px;
-  }
-
-  .authorInfo {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .authorJob {
-    margin-left: 0;
-    margin-top: 5px;
-  }
-
-  .socialLinks a {
-    width: 35px;
-    box-shadow: var(--shadow-default);
+}
+@media (max-width: 600px) {
+  main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+    width: 205px;
   }
 }
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   header nav.navbar {
     padding: 0px;
   }
@@ -459,7 +633,81 @@ main section .sectionTitle {
   main section .content {
     padding: var(--phone-padding);
   }
+  main section .content .info-container .imageFeild {
+    max-width: 80%;
+    padding: 20px;
+  }
+  main section .content .skills-container .skill,
+main section .content .projects-container .skill,
+main section .content .contact-container .skill {
+    width: 35%;
+  }
+  main section .content .skills-container .skill .skillTitle,
+main section .content .skills-container .skill .projectTitle,
+main section .content .skills-container .skill .contactTitle,
+main section .content .skills-container .project .skillTitle,
+main section .content .skills-container .project .projectTitle,
+main section .content .skills-container .project .contactTitle,
+main section .content .skills-container .contact .skillTitle,
+main section .content .skills-container .contact .projectTitle,
+main section .content .skills-container .contact .contactTitle,
+main section .content .projects-container .skill .skillTitle,
+main section .content .projects-container .skill .projectTitle,
+main section .content .projects-container .skill .contactTitle,
+main section .content .projects-container .project .skillTitle,
+main section .content .projects-container .project .projectTitle,
+main section .content .projects-container .project .contactTitle,
+main section .content .projects-container .contact .skillTitle,
+main section .content .projects-container .contact .projectTitle,
+main section .content .projects-container .contact .contactTitle,
+main section .content .contact-container .skill .skillTitle,
+main section .content .contact-container .skill .projectTitle,
+main section .content .contact-container .skill .contactTitle,
+main section .content .contact-container .project .skillTitle,
+main section .content .contact-container .project .projectTitle,
+main section .content .contact-container .project .contactTitle,
+main section .content .contact-container .contact .skillTitle,
+main section .content .contact-container .contact .projectTitle,
+main section .content .contact-container .contact .contactTitle {
+    margin: 10px;
+  }
+  main section .content .skills-container .skill .skillIcon img,
+main section .content .skills-container .skill .contactIcon img,
+main section .content .skills-container .project .skillIcon img,
+main section .content .skills-container .project .contactIcon img,
+main section .content .skills-container .contact .skillIcon img,
+main section .content .skills-container .contact .contactIcon img,
+main section .content .projects-container .skill .skillIcon img,
+main section .content .projects-container .skill .contactIcon img,
+main section .content .projects-container .project .skillIcon img,
+main section .content .projects-container .project .contactIcon img,
+main section .content .projects-container .contact .skillIcon img,
+main section .content .projects-container .contact .contactIcon img,
+main section .content .contact-container .skill .skillIcon img,
+main section .content .contact-container .skill .contactIcon img,
+main section .content .contact-container .project .skillIcon img,
+main section .content .contact-container .project .contactIcon img,
+main section .content .contact-container .contact .skillIcon img,
+main section .content .contact-container .contact .contactIcon img {
+    width: 85px;
+  }
+  main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+    width: 205px;
+  }
   main section .content .contact {
     width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  header nav.navbar .logo {
+    font-size: 16px;
   }
 }
