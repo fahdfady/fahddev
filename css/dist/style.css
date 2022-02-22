@@ -42,6 +42,7 @@ body {
   font-family: var(--font-family);
   font-size: 16px;
   text-transform: capitalize;
+  overflow-x: hidden;
 }
 
 .page-container {
@@ -136,7 +137,7 @@ body {
   -webkit-transition: none;
   transition: 0.09s;
   pointer-events: none;
-  z-index: 200;
+  z-index: 9999999;
 }
 .cursor-container .dot {
   width: 5px;
@@ -149,7 +150,7 @@ body {
   -webkit-transition: none;
   transition: none;
   pointer-events: none;
-  z-index: 100;
+  z-index: 999999;
 }
 
 header {
@@ -204,7 +205,7 @@ main section {
   align-items: center;
   padding: var(--default-padding);
   background-color: var(--bg-color);
-  min-height: 100vh;
+  min-height: 95vh;
 }
 main section .content {
   display: flex;
@@ -392,6 +393,9 @@ main section .content .contact-container .contact .contactTitle {
   font-size: 1em;
   font-weight: bold;
   padding: 12px 0px;
+  width: min-content;
+  min-width: 90%;
+  text-align: center;
 }
 main section .content .skills-container .skill .skillIcon img,
 main section .content .skills-container .skill .contactIcon img,
@@ -493,11 +497,12 @@ main section .imageFeild {
 main section .imageFeild .image {
   width: 100%;
   border-radius: var(--border-radius);
-  filter: drop-shadow(0px 10px 6px #000);
+  filter: drop-shadow(-5px 10px 6px #000);
   transition: all 0.1s;
 }
 main section .sectionTitle {
   font-size: var(--font-size-title);
+  text-align: center;
   text-transform: uppercase;
   font-weight: bold;
   width: 100%;
@@ -528,10 +533,10 @@ footer.page-footer ul.socialMedia {
 footer.page-footer ul.socialMedia a {
   font-size: 1.313rem;
   color: #55616c;
-}
-footer.page-footer ul.socialMedia a::hover {
-  color: #323330;
   transition: 0.2s all ease-in-out;
+}
+footer.page-footer ul.socialMedia a:hover {
+  color: #323330;
 }
 footer.page-footer p.email {
   user-select: text;
@@ -549,6 +554,9 @@ footer.page-footer p.name {
     display: none;
   }
 
+  main section {
+    min-height: 50vh;
+  }
   main section .content .skills-container .skill .projectIcon img,
 main section .content .skills-container .project .projectIcon img,
 main section .content .skills-container .contact .projectIcon img,
@@ -563,6 +571,7 @@ main section .content .contact-container .contact .projectIcon img {
 }
 @media (max-width: 768px) {
   main section {
+    min-height: 70vh;
     flex-direction: column;
     padding: 10px;
   }
@@ -607,6 +616,9 @@ main section .content .contact-container .contact .projectIcon img {
   }
 }
 @media (max-width: 600px) {
+  main section .content .info-container .textFeild p.text {
+    font-size: 18px;
+  }
   main section .content .skills-container .skill .projectIcon img,
 main section .content .skills-container .project .projectIcon img,
 main section .content .skills-container .contact .projectIcon img,
@@ -621,7 +633,7 @@ main section .content .contact-container .contact .projectIcon img {
 }
 @media (max-width: 500px) {
   header nav.navbar {
-    padding: 0px;
+    padding: 0px 2px;
   }
   header nav.navbar ul {
     gap: 0px 6px;
@@ -630,6 +642,9 @@ main section .content .contact-container .contact .projectIcon img {
     font-size: 14px;
   }
 
+  main section .sectionTitle {
+    margin: 10px 0px;
+  }
   main section .content {
     padding: var(--phone-padding);
   }
@@ -638,9 +653,28 @@ main section .content .contact-container .contact .projectIcon img {
     padding: 20px;
   }
   main section .content .skills-container .skill,
+main section .content .skills-container .project,
+main section .content .skills-container .contact,
 main section .content .projects-container .skill,
-main section .content .contact-container .skill {
-    width: 35%;
+main section .content .projects-container .project,
+main section .content .projects-container .contact,
+main section .content .contact-container .skill,
+main section .content .contact-container .project,
+main section .content .contact-container .contact {
+    padding: 2px;
+    margin: 15px 10px;
+  }
+  main section .content .skills-container .skill .ribbon,
+main section .content .skills-container .project .ribbon,
+main section .content .skills-container .contact .ribbon,
+main section .content .projects-container .skill .ribbon,
+main section .content .projects-container .project .ribbon,
+main section .content .projects-container .contact .ribbon,
+main section .content .contact-container .skill .ribbon,
+main section .content .contact-container .project .ribbon,
+main section .content .contact-container .contact .ribbon {
+    padding: 6px;
+    font-size: 12px;
   }
   main section .content .skills-container .skill .skillTitle,
 main section .content .skills-container .skill .projectTitle,
@@ -670,6 +704,7 @@ main section .content .contact-container .contact .skillTitle,
 main section .content .contact-container .contact .projectTitle,
 main section .content .contact-container .contact .contactTitle {
     margin: 10px;
+    padding: 0px;
   }
   main section .content .skills-container .skill .skillIcon img,
 main section .content .skills-container .skill .contactIcon img,
@@ -700,7 +735,14 @@ main section .content .projects-container .contact .projectIcon img,
 main section .content .contact-container .skill .projectIcon img,
 main section .content .contact-container .project .projectIcon img,
 main section .content .contact-container .contact .projectIcon img {
-    width: 205px;
+    width: 145px;
+  }
+  main section .content .skills-container .skill,
+main section .content .projects-container .skill,
+main section .content .contact-container .skill {
+    padding: 6px;
+    margin: 15px;
+    width: 35%;
   }
   main section .content .contact {
     width: 100%;
@@ -709,5 +751,133 @@ main section .content .contact-container .contact .projectIcon img {
 @media (max-width: 375px) {
   header nav.navbar .logo {
     font-size: 16px;
+  }
+
+  main section .sectionTitle {
+    font-size: 20px;
+  }
+  main section .content {
+    padding: var(--phone-padding);
+  }
+  main section .content .info-container .imageFeild {
+    max-width: 80%;
+    padding: 20px;
+  }
+  main section .content .info-container .textFeild p.text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 280px) {
+  header nav.navbar .logo {
+    font-size: 14px;
+  }
+  header nav.navbar ul {
+    gap: 3px 0px;
+  }
+
+  main section .sectionTitle {
+    font-size: 18px;
+  }
+  main section .content .info-container .imageFeild {
+    max-width: 80%;
+    padding: 20px;
+  }
+  main section .content .skills-container .skill,
+main section .content .projects-container .skill,
+main section .content .contact-container .skill {
+    width: 35%;
+  }
+  main section .content .skills-container .skill,
+main section .content .skills-container .project,
+main section .content .skills-container .contact,
+main section .content .projects-container .skill,
+main section .content .projects-container .project,
+main section .content .projects-container .contact,
+main section .content .contact-container .skill,
+main section .content .contact-container .project,
+main section .content .contact-container .contact {
+    padding: 2px;
+    margin: 15px 12px;
+  }
+  main section .content .skills-container .skill .ribbon,
+main section .content .skills-container .project .ribbon,
+main section .content .skills-container .contact .ribbon,
+main section .content .projects-container .skill .ribbon,
+main section .content .projects-container .project .ribbon,
+main section .content .projects-container .contact .ribbon,
+main section .content .contact-container .skill .ribbon,
+main section .content .contact-container .project .ribbon,
+main section .content .contact-container .contact .ribbon {
+    padding: 6px;
+    font-size: 12px;
+  }
+  main section .content .skills-container .skill .skillTitle,
+main section .content .skills-container .skill .projectTitle,
+main section .content .skills-container .skill .contactTitle,
+main section .content .skills-container .project .skillTitle,
+main section .content .skills-container .project .projectTitle,
+main section .content .skills-container .project .contactTitle,
+main section .content .skills-container .contact .skillTitle,
+main section .content .skills-container .contact .projectTitle,
+main section .content .skills-container .contact .contactTitle,
+main section .content .projects-container .skill .skillTitle,
+main section .content .projects-container .skill .projectTitle,
+main section .content .projects-container .skill .contactTitle,
+main section .content .projects-container .project .skillTitle,
+main section .content .projects-container .project .projectTitle,
+main section .content .projects-container .project .contactTitle,
+main section .content .projects-container .contact .skillTitle,
+main section .content .projects-container .contact .projectTitle,
+main section .content .projects-container .contact .contactTitle,
+main section .content .contact-container .skill .skillTitle,
+main section .content .contact-container .skill .projectTitle,
+main section .content .contact-container .skill .contactTitle,
+main section .content .contact-container .project .skillTitle,
+main section .content .contact-container .project .projectTitle,
+main section .content .contact-container .project .contactTitle,
+main section .content .contact-container .contact .skillTitle,
+main section .content .contact-container .contact .projectTitle,
+main section .content .contact-container .contact .contactTitle {
+    margin: 10px;
+    padding: 0px;
+  }
+  main section .content .skills-container .skill .skillIcon img,
+main section .content .skills-container .skill .contactIcon img,
+main section .content .skills-container .project .skillIcon img,
+main section .content .skills-container .project .contactIcon img,
+main section .content .skills-container .contact .skillIcon img,
+main section .content .skills-container .contact .contactIcon img,
+main section .content .projects-container .skill .skillIcon img,
+main section .content .projects-container .skill .contactIcon img,
+main section .content .projects-container .project .skillIcon img,
+main section .content .projects-container .project .contactIcon img,
+main section .content .projects-container .contact .skillIcon img,
+main section .content .projects-container .contact .contactIcon img,
+main section .content .contact-container .skill .skillIcon img,
+main section .content .contact-container .skill .contactIcon img,
+main section .content .contact-container .project .skillIcon img,
+main section .content .contact-container .project .contactIcon img,
+main section .content .contact-container .contact .skillIcon img,
+main section .content .contact-container .contact .contactIcon img {
+    width: 80px;
+  }
+  main section .content .skills-container .skill .projectIcon img,
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
+    width: 130px;
+  }
+  main section .content .skills-container .project,
+main section .content .projects-container .project,
+main section .content .contact-container .project {
+    margin: 15px 5px;
+  }
+  main section .content .contact {
+    width: 100%;
   }
 }
