@@ -2,7 +2,7 @@
 let body = document.querySelector('body');
 
 window.addEventListener('load', function () {
-    setTimeout(function () { body.classList.add("loaded") }, 3000);
+    setTimeout(function () { body.classList.add("loaded") }, 1700);
 });
 
 
