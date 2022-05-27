@@ -22,11 +22,6 @@
   --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
 }
 
-::-moz-selection {
-  background: var(--secondary-color);
-  color: var(--bg-color);
-}
-
 ::selection {
   background: var(--secondary-color);
   color: var(--bg-color);
@@ -62,33 +57,21 @@ body {
   width: 100%;
   background: #fff;
   height: 100%;
-  z-index: 9999999999999999;
+  z-index: 10000000000000000;
   overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 .loaded .loader-wrapper {
   visibility: hidden;
-  -webkit-transform: translateY(-100%);
-          transform: translateY(-100%);
-  -webkit-transition: all 0.3s 1s ease-out;
+  transform: translateY(-100%);
   transition: all 0.3s 1s ease-out;
 }
-
 .loaded .loader-wrapper .loader {
   opacity: 0;
-  -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
-
 .loader-wrapper .loader {
   position: relative;
   width: 60px;
@@ -98,7 +81,6 @@ body {
   display: inline-block;
   vertical-align: middle;
 }
-
 .loader-wrapper .loader .loader-outter {
   position: absolute;
   border: 4px solid #8b6bd1;
@@ -110,7 +92,6 @@ body {
   -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
   animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
 }
-
 .loader-wrapper .loader .loader-inner {
   position: absolute;
   border: 4px solid #8b6bd1;
@@ -125,17 +106,6 @@ body {
   animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
 }
 
-@-webkit-keyframes loader-outter {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
 @keyframes loader-outter {
   0% {
     -webkit-transform: rotate(0deg);
@@ -146,18 +116,6 @@ body {
     transform: rotate(360deg);
   }
 }
-
-@-webkit-keyframes loader-inner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
-  }
-}
-
 @keyframes loader-inner {
   0% {
     -webkit-transform: rotate(0deg);
@@ -168,7 +126,6 @@ body {
     transform: rotate(-360deg);
   }
 }
-
 .cursor-container .cursor {
   height: 25px;
   width: 25px;
@@ -178,12 +135,10 @@ body {
   top: 9px;
   left: 9px;
   -webkit-transition: none;
-  -webkit-transition: .09s;
-  transition: .09s;
+  transition: 0.09s;
   pointer-events: none;
   z-index: 9999999;
 }
-
 .cursor-container .dot {
   width: 5px;
   height: 5px;
@@ -201,22 +156,13 @@ body {
 header {
   position: relative;
   padding: 0px 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
-
 header a {
-  -webkit-transition: 0.15s all linear;
   transition: 0.15s all linear;
 }
-
 header nav.navbar {
   background: #f8f8f8;
   width: 100%;
@@ -227,18 +173,11 @@ header nav.navbar {
   left: 0;
   right: 0;
   z-index: 99999;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid #7e7e7e;
 }
-
 header nav.navbar .logo {
   font-size: var(--font-size-title);
   font-weight: bold;
@@ -246,126 +185,77 @@ header nav.navbar .logo {
   text-decoration: none;
   color: var(--secondary-color);
 }
-
 header nav.navbar .logo:hover {
   color: var(--text-color);
 }
-
 header nav.navbar ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 0px 8px;
 }
-
 header nav.navbar ul li a {
   text-decoration: none;
   color: var(--text-color);
 }
-
 header nav.navbar ul li a:hover {
   color: var(--secondary-color);
 }
 
 main section {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   padding: var(--default-padding);
   background-color: var(--bg-color);
   min-height: 95vh;
 }
-
 main section .content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  justify-content: center;
+  flex-direction: column;
   min-width: var(--min-width);
   max-width: var(--max-width);
   min-height: var(--min-height);
   padding: calc(var(--default-padding) * 2);
-  -webkit-box-shadow: var(--shadow-default);
-          box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-default);
   border-radius: var(--border-radius);
   background-repeat: no-repeat;
   background-image: url("../images/pattern-curve.svg");
   background-color: #fff;
   background-position: bottom left;
 }
-
 main section .content .textFeild {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  flex: 1;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px);
-  -webkit-transition: all 1s;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(-20px);
   transition: all 1s;
 }
-
 main section .content .textFeild p.text {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   font-size: 20px;
   font-weight: 500;
   line-height: 30px;
   margin-bottom: 10px;
 }
-
 main section .content .textFeild .authorInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 main section .content .textFeild .authorInfo .authorName {
   font-weight: 700;
 }
-
 main section .content .textFeild .authorInfo .authorJob {
   font-weight: 500;
   margin-left: 5px;
   color: #747376;
 }
-
 main section .content .textFeild .socialLinks {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-top: 40px;
 }
-
 main section .content .textFeild .socialLinks a {
   background: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 40px;
   height: 40px;
@@ -374,41 +264,28 @@ main section .content .textFeild .socialLinks a {
   border-radius: 50%;
   -webkit-transition: all var(--animation-timing);
   transition: all var(--animation-timing);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: #fff;
 }
-
 main section .content .textFeild .socialLinks a:hover {
   background: transparent;
   color: #000;
 }
-
 main section .content .info-container,
 main section .content .skills-container,
 main section .content .projects-container,
 main section .content .contact-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
-
 main section .content .skills-container,
 main section .content .projects-container,
 main section .content .contact-container {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   padding: clc(var(--default-padding)/2);
 }
-
 main section .content .skills-container .skill,
 main section .content .skills-container .project,
 main section .content .skills-container .contact,
@@ -419,27 +296,17 @@ main section .content .contact-container .skill,
 main section .content .contact-container .project,
 main section .content .contact-container .contact {
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  flex-direction: column;
   padding: 8px;
   margin: 15px 18px;
   padding-bottom: 0px;
-  -webkit-box-shadow: var(--shadow-default);
-          box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-default);
   text-decoration: none;
   color: #000;
-  -webkit-transition: 0.15s all linear;
   transition: 0.15s all linear;
 }
-
 main section .content .skills-container .skill .ribbon,
 main section .content .skills-container .project .ribbon,
 main section .content .skills-container .contact .ribbon,
@@ -457,7 +324,6 @@ main section .content .contact-container .contact .ribbon {
   color: #fff;
   padding: 10px;
 }
-
 main section .content .skills-container .skill .ribbon::after,
 main section .content .skills-container .project .ribbon::after,
 main section .content .skills-container .contact .ribbon::after,
@@ -479,7 +345,6 @@ main section .content .contact-container .contact .ribbon::after {
   transform: rotate(270deg);
   border-color: transparent transparent transparent #634e5b;
 }
-
 main section .content .skills-container .skill .ribbon::before,
 main section .content .skills-container .project .ribbon::before,
 main section .content .skills-container .contact .ribbon::before,
@@ -499,7 +364,6 @@ main section .content .contact-container .contact .ribbon::before {
   border-width: 4px 0 0 4px;
   border-color: transparent transparent transparent #634e5b;
 }
-
 main section .content .skills-container .skill .skillTitle,
 main section .content .skills-container .skill .projectTitle,
 main section .content .skills-container .skill .contactTitle,
@@ -530,13 +394,10 @@ main section .content .contact-container .contact .contactTitle {
   font-size: 1em;
   font-weight: bold;
   padding: 12px 0px;
-  width: -webkit-min-content;
-  width: -moz-min-content;
   width: min-content;
   min-width: 90%;
   text-align: center;
 }
-
 main section .content .skills-container .skill .skillIcon img,
 main section .content .skills-container .skill .contactIcon img,
 main section .content .skills-container .project .skillIcon img,
@@ -557,7 +418,6 @@ main section .content .contact-container .contact .skillIcon img,
 main section .content .contact-container .contact .contactIcon img {
   width: 150px;
 }
-
 main section .content .skills-container .skill .skillIcon i,
 main section .content .skills-container .skill .contactIcon i,
 main section .content .skills-container .project .skillIcon i,
@@ -578,7 +438,6 @@ main section .content .contact-container .contact .skillIcon i,
 main section .content .contact-container .contact .contactIcon i {
   font-size: var(--font-size-icon);
 }
-
 main section .content .skills-container .skill .projectIcon,
 main section .content .skills-container .project .projectIcon,
 main section .content .skills-container .contact .projectIcon,
@@ -590,7 +449,6 @@ main section .content .contact-container .project .projectIcon,
 main section .content .contact-container .contact .projectIcon {
   position: relative;
 }
-
 main section .content .skills-container .skill .projectIcon img,
 main section .content .skills-container .project .projectIcon img,
 main section .content .skills-container .contact .projectIcon img,
@@ -602,7 +460,6 @@ main section .content .contact-container .project .projectIcon img,
 main section .content .contact-container .contact .projectIcon img {
   width: 300px;
 }
-
 main section .content .skills-container .skill:hover, main section .content .skills-container .skill:focus,
 main section .content .skills-container .project:hover,
 main section .content .skills-container .project:focus,
@@ -620,45 +477,30 @@ main section .content .contact-container .project:hover,
 main section .content .contact-container .project:focus,
 main section .content .contact-container .contact:hover,
 main section .content .contact-container .contact:focus {
-  -webkit-box-shadow: var(--shadow-hover);
-          box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-hover);
 }
-
 main section .content .contact {
   min-width: 40%;
 }
-
 main section .imageFeild {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  flex: 1;
   max-width: 60%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   padding: 50px;
   background-size: contain;
   background-position: center;
   background-image: url("../img/pattern-bg.svg");
   background-repeat: no-repeat;
-  -webkit-transform: translateY(20px);
-          transform: translateY(20px);
-  -webkit-transition: all 1s;
+  transform: translateY(20px);
   transition: all 1s;
 }
-
 main section .imageFeild .image {
   width: 100%;
   border-radius: var(--border-radius);
-  -webkit-filter: drop-shadow(-5px 10px 6px #000);
-          filter: drop-shadow(-5px 10px 6px #000);
-  -webkit-transition: all 0.1s;
+  filter: drop-shadow(-5px 10px 6px #000);
   transition: all 0.1s;
 }
-
 main section .sectionTitle {
   font-size: var(--font-size-title);
   text-align: center;
@@ -666,15 +508,9 @@ main section .sectionTitle {
   font-weight: bold;
   width: 100%;
   margin-bottom: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 
 footer.page-footer {
@@ -685,45 +521,29 @@ footer.page-footer {
   background: var(--bg-color);
   color: #6c757d;
   width: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   text-align: center;
 }
-
 footer.page-footer ul.socialMedia {
   margin: auto;
   padding: 10px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   gap: 13px;
 }
-
 footer.page-footer ul.socialMedia a {
   font-size: 1.313rem;
   color: #55616c;
-  -webkit-transition: .2s all ease-in-out;
-  transition: .2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
 }
-
 footer.page-footer ul.socialMedia a:hover {
   color: #323330;
 }
-
 footer.page-footer p.email {
-  -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
-          user-select: text;
+  user-select: text;
   font-size: 16px;
   margin: 10px 0px;
 }
-
 footer.page-footer p.name {
   font-size: 20px;
   padding: 10px;
@@ -731,32 +551,29 @@ footer.page-footer p.name {
 
 @media (max-width: 960px) {
   .cursor,
-  .dot {
+.dot {
     display: none;
   }
+
   main section {
     min-height: 50vh;
   }
   main section .content .skills-container .skill .projectIcon img,
-  main section .content .skills-container .project .projectIcon img,
-  main section .content .skills-container .contact .projectIcon img,
-  main section .content .projects-container .skill .projectIcon img,
-  main section .content .projects-container .project .projectIcon img,
-  main section .content .projects-container .contact .projectIcon img,
-  main section .content .contact-container .skill .projectIcon img,
-  main section .content .contact-container .project .projectIcon img,
-  main section .content .contact-container .contact .projectIcon img {
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
     width: 275px;
   }
 }
-
 @media (max-width: 768px) {
   main section {
     min-height: 70vh;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     padding: 10px;
   }
   main section .imageFeild {
@@ -764,71 +581,57 @@ footer.page-footer p.name {
     margin: 0 -10px;
   }
   main section .content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
     height: auto;
     max-height: inherit;
     padding: 15px;
   }
   main section .content .info-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column-reverse;
+    align-items: center;
     gap: 60px 0px;
   }
   main section .content .info-container .textFeild .authorInfo {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
   main section .content .info-container .textFeild .authorJob {
     margin-left: 0;
     margin-top: 5px;
   }
   main section .content .skills-container .skill .projectIcon img,
-  main section .content .skills-container .project .projectIcon img,
-  main section .content .skills-container .contact .projectIcon img,
-  main section .content .projects-container .skill .projectIcon img,
-  main section .content .projects-container .project .projectIcon img,
-  main section .content .projects-container .contact .projectIcon img,
-  main section .content .contact-container .skill .projectIcon img,
-  main section .content .contact-container .project .projectIcon img,
-  main section .content .contact-container .contact .projectIcon img {
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
     width: 270px;
   }
+
   p.text {
     font-size: 22px;
     line-height: 32px;
   }
 }
-
 @media (max-width: 600px) {
   main section .content .info-container .textFeild p.text {
     font-size: 18px;
   }
   main section .content .skills-container .skill .projectIcon img,
-  main section .content .skills-container .project .projectIcon img,
-  main section .content .skills-container .contact .projectIcon img,
-  main section .content .projects-container .skill .projectIcon img,
-  main section .content .projects-container .project .projectIcon img,
-  main section .content .projects-container .contact .projectIcon img,
-  main section .content .contact-container .skill .projectIcon img,
-  main section .content .contact-container .project .projectIcon img,
-  main section .content .contact-container .contact .projectIcon img {
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
     width: 205px;
   }
 }
-
 @media (max-width: 500px) {
   header nav.navbar {
     padding: 0px 2px;
@@ -839,6 +642,7 @@ footer.page-footer p.name {
   header nav.navbar ul li a {
     font-size: 14px;
   }
+
   main section .sectionTitle {
     margin: 10px 0px;
   }
@@ -850,93 +654,93 @@ footer.page-footer p.name {
     padding: 20px;
   }
   main section .content .skills-container .skill,
-  main section .content .skills-container .project,
-  main section .content .skills-container .contact,
-  main section .content .projects-container .skill,
-  main section .content .projects-container .project,
-  main section .content .projects-container .contact,
-  main section .content .contact-container .skill,
-  main section .content .contact-container .project,
-  main section .content .contact-container .contact {
+main section .content .skills-container .project,
+main section .content .skills-container .contact,
+main section .content .projects-container .skill,
+main section .content .projects-container .project,
+main section .content .projects-container .contact,
+main section .content .contact-container .skill,
+main section .content .contact-container .project,
+main section .content .contact-container .contact {
     padding: 2px;
     margin: 15px 10px;
   }
   main section .content .skills-container .skill .ribbon,
-  main section .content .skills-container .project .ribbon,
-  main section .content .skills-container .contact .ribbon,
-  main section .content .projects-container .skill .ribbon,
-  main section .content .projects-container .project .ribbon,
-  main section .content .projects-container .contact .ribbon,
-  main section .content .contact-container .skill .ribbon,
-  main section .content .contact-container .project .ribbon,
-  main section .content .contact-container .contact .ribbon {
+main section .content .skills-container .project .ribbon,
+main section .content .skills-container .contact .ribbon,
+main section .content .projects-container .skill .ribbon,
+main section .content .projects-container .project .ribbon,
+main section .content .projects-container .contact .ribbon,
+main section .content .contact-container .skill .ribbon,
+main section .content .contact-container .project .ribbon,
+main section .content .contact-container .contact .ribbon {
     padding: 6px;
     font-size: 12px;
   }
   main section .content .skills-container .skill .skillTitle,
-  main section .content .skills-container .skill .projectTitle,
-  main section .content .skills-container .skill .contactTitle,
-  main section .content .skills-container .project .skillTitle,
-  main section .content .skills-container .project .projectTitle,
-  main section .content .skills-container .project .contactTitle,
-  main section .content .skills-container .contact .skillTitle,
-  main section .content .skills-container .contact .projectTitle,
-  main section .content .skills-container .contact .contactTitle,
-  main section .content .projects-container .skill .skillTitle,
-  main section .content .projects-container .skill .projectTitle,
-  main section .content .projects-container .skill .contactTitle,
-  main section .content .projects-container .project .skillTitle,
-  main section .content .projects-container .project .projectTitle,
-  main section .content .projects-container .project .contactTitle,
-  main section .content .projects-container .contact .skillTitle,
-  main section .content .projects-container .contact .projectTitle,
-  main section .content .projects-container .contact .contactTitle,
-  main section .content .contact-container .skill .skillTitle,
-  main section .content .contact-container .skill .projectTitle,
-  main section .content .contact-container .skill .contactTitle,
-  main section .content .contact-container .project .skillTitle,
-  main section .content .contact-container .project .projectTitle,
-  main section .content .contact-container .project .contactTitle,
-  main section .content .contact-container .contact .skillTitle,
-  main section .content .contact-container .contact .projectTitle,
-  main section .content .contact-container .contact .contactTitle {
+main section .content .skills-container .skill .projectTitle,
+main section .content .skills-container .skill .contactTitle,
+main section .content .skills-container .project .skillTitle,
+main section .content .skills-container .project .projectTitle,
+main section .content .skills-container .project .contactTitle,
+main section .content .skills-container .contact .skillTitle,
+main section .content .skills-container .contact .projectTitle,
+main section .content .skills-container .contact .contactTitle,
+main section .content .projects-container .skill .skillTitle,
+main section .content .projects-container .skill .projectTitle,
+main section .content .projects-container .skill .contactTitle,
+main section .content .projects-container .project .skillTitle,
+main section .content .projects-container .project .projectTitle,
+main section .content .projects-container .project .contactTitle,
+main section .content .projects-container .contact .skillTitle,
+main section .content .projects-container .contact .projectTitle,
+main section .content .projects-container .contact .contactTitle,
+main section .content .contact-container .skill .skillTitle,
+main section .content .contact-container .skill .projectTitle,
+main section .content .contact-container .skill .contactTitle,
+main section .content .contact-container .project .skillTitle,
+main section .content .contact-container .project .projectTitle,
+main section .content .contact-container .project .contactTitle,
+main section .content .contact-container .contact .skillTitle,
+main section .content .contact-container .contact .projectTitle,
+main section .content .contact-container .contact .contactTitle {
     margin: 10px;
     padding: 0px;
   }
   main section .content .skills-container .skill .skillIcon img,
-  main section .content .skills-container .skill .contactIcon img,
-  main section .content .skills-container .project .skillIcon img,
-  main section .content .skills-container .project .contactIcon img,
-  main section .content .skills-container .contact .skillIcon img,
-  main section .content .skills-container .contact .contactIcon img,
-  main section .content .projects-container .skill .skillIcon img,
-  main section .content .projects-container .skill .contactIcon img,
-  main section .content .projects-container .project .skillIcon img,
-  main section .content .projects-container .project .contactIcon img,
-  main section .content .projects-container .contact .skillIcon img,
-  main section .content .projects-container .contact .contactIcon img,
-  main section .content .contact-container .skill .skillIcon img,
-  main section .content .contact-container .skill .contactIcon img,
-  main section .content .contact-container .project .skillIcon img,
-  main section .content .contact-container .project .contactIcon img,
-  main section .content .contact-container .contact .skillIcon img,
-  main section .content .contact-container .contact .contactIcon img {
+main section .content .skills-container .skill .contactIcon img,
+main section .content .skills-container .project .skillIcon img,
+main section .content .skills-container .project .contactIcon img,
+main section .content .skills-container .contact .skillIcon img,
+main section .content .skills-container .contact .contactIcon img,
+main section .content .projects-container .skill .skillIcon img,
+main section .content .projects-container .skill .contactIcon img,
+main section .content .projects-container .project .skillIcon img,
+main section .content .projects-container .project .contactIcon img,
+main section .content .projects-container .contact .skillIcon img,
+main section .content .projects-container .contact .contactIcon img,
+main section .content .contact-container .skill .skillIcon img,
+main section .content .contact-container .skill .contactIcon img,
+main section .content .contact-container .project .skillIcon img,
+main section .content .contact-container .project .contactIcon img,
+main section .content .contact-container .contact .skillIcon img,
+main section .content .contact-container .contact .contactIcon img {
     width: 85px;
   }
   main section .content .skills-container .skill .projectIcon img,
-  main section .content .skills-container .project .projectIcon img,
-  main section .content .skills-container .contact .projectIcon img,
-  main section .content .projects-container .skill .projectIcon img,
-  main section .content .projects-container .project .projectIcon img,
-  main section .content .projects-container .contact .projectIcon img,
-  main section .content .contact-container .skill .projectIcon img,
-  main section .content .contact-container .project .projectIcon img,
-  main section .content .contact-container .contact .projectIcon img {
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
     width: 145px;
   }
   main section .content .skills-container .skill,
-  main section .content .projects-container .skill,
-  main section .content .contact-container .skill {
+main section .content .projects-container .skill,
+main section .content .contact-container .skill {
     padding: 6px;
     margin: 15px;
     width: 35%;
@@ -945,11 +749,11 @@ footer.page-footer p.name {
     width: 100%;
   }
 }
-
 @media (max-width: 375px) {
   header nav.navbar .logo {
     font-size: 16px;
   }
+
   main section .sectionTitle {
     font-size: 20px;
   }
@@ -964,7 +768,6 @@ footer.page-footer p.name {
     font-size: 16px;
   }
 }
-
 @media (max-width: 280px) {
   header nav.navbar .logo {
     font-size: 14px;
@@ -972,6 +775,7 @@ footer.page-footer p.name {
   header nav.navbar ul {
     gap: 3px 0px;
   }
+
   main section .sectionTitle {
     font-size: 18px;
   }
@@ -980,102 +784,101 @@ footer.page-footer p.name {
     padding: 20px;
   }
   main section .content .skills-container .skill,
-  main section .content .projects-container .skill,
-  main section .content .contact-container .skill {
+main section .content .projects-container .skill,
+main section .content .contact-container .skill {
     width: 35%;
   }
   main section .content .skills-container .skill,
-  main section .content .skills-container .project,
-  main section .content .skills-container .contact,
-  main section .content .projects-container .skill,
-  main section .content .projects-container .project,
-  main section .content .projects-container .contact,
-  main section .content .contact-container .skill,
-  main section .content .contact-container .project,
-  main section .content .contact-container .contact {
+main section .content .skills-container .project,
+main section .content .skills-container .contact,
+main section .content .projects-container .skill,
+main section .content .projects-container .project,
+main section .content .projects-container .contact,
+main section .content .contact-container .skill,
+main section .content .contact-container .project,
+main section .content .contact-container .contact {
     padding: 2px;
     margin: 15px 12px;
   }
   main section .content .skills-container .skill .ribbon,
-  main section .content .skills-container .project .ribbon,
-  main section .content .skills-container .contact .ribbon,
-  main section .content .projects-container .skill .ribbon,
-  main section .content .projects-container .project .ribbon,
-  main section .content .projects-container .contact .ribbon,
-  main section .content .contact-container .skill .ribbon,
-  main section .content .contact-container .project .ribbon,
-  main section .content .contact-container .contact .ribbon {
+main section .content .skills-container .project .ribbon,
+main section .content .skills-container .contact .ribbon,
+main section .content .projects-container .skill .ribbon,
+main section .content .projects-container .project .ribbon,
+main section .content .projects-container .contact .ribbon,
+main section .content .contact-container .skill .ribbon,
+main section .content .contact-container .project .ribbon,
+main section .content .contact-container .contact .ribbon {
     padding: 6px;
     font-size: 12px;
   }
   main section .content .skills-container .skill .skillTitle,
-  main section .content .skills-container .skill .projectTitle,
-  main section .content .skills-container .skill .contactTitle,
-  main section .content .skills-container .project .skillTitle,
-  main section .content .skills-container .project .projectTitle,
-  main section .content .skills-container .project .contactTitle,
-  main section .content .skills-container .contact .skillTitle,
-  main section .content .skills-container .contact .projectTitle,
-  main section .content .skills-container .contact .contactTitle,
-  main section .content .projects-container .skill .skillTitle,
-  main section .content .projects-container .skill .projectTitle,
-  main section .content .projects-container .skill .contactTitle,
-  main section .content .projects-container .project .skillTitle,
-  main section .content .projects-container .project .projectTitle,
-  main section .content .projects-container .project .contactTitle,
-  main section .content .projects-container .contact .skillTitle,
-  main section .content .projects-container .contact .projectTitle,
-  main section .content .projects-container .contact .contactTitle,
-  main section .content .contact-container .skill .skillTitle,
-  main section .content .contact-container .skill .projectTitle,
-  main section .content .contact-container .skill .contactTitle,
-  main section .content .contact-container .project .skillTitle,
-  main section .content .contact-container .project .projectTitle,
-  main section .content .contact-container .project .contactTitle,
-  main section .content .contact-container .contact .skillTitle,
-  main section .content .contact-container .contact .projectTitle,
-  main section .content .contact-container .contact .contactTitle {
+main section .content .skills-container .skill .projectTitle,
+main section .content .skills-container .skill .contactTitle,
+main section .content .skills-container .project .skillTitle,
+main section .content .skills-container .project .projectTitle,
+main section .content .skills-container .project .contactTitle,
+main section .content .skills-container .contact .skillTitle,
+main section .content .skills-container .contact .projectTitle,
+main section .content .skills-container .contact .contactTitle,
+main section .content .projects-container .skill .skillTitle,
+main section .content .projects-container .skill .projectTitle,
+main section .content .projects-container .skill .contactTitle,
+main section .content .projects-container .project .skillTitle,
+main section .content .projects-container .project .projectTitle,
+main section .content .projects-container .project .contactTitle,
+main section .content .projects-container .contact .skillTitle,
+main section .content .projects-container .contact .projectTitle,
+main section .content .projects-container .contact .contactTitle,
+main section .content .contact-container .skill .skillTitle,
+main section .content .contact-container .skill .projectTitle,
+main section .content .contact-container .skill .contactTitle,
+main section .content .contact-container .project .skillTitle,
+main section .content .contact-container .project .projectTitle,
+main section .content .contact-container .project .contactTitle,
+main section .content .contact-container .contact .skillTitle,
+main section .content .contact-container .contact .projectTitle,
+main section .content .contact-container .contact .contactTitle {
     margin: 10px;
     padding: 0px;
   }
   main section .content .skills-container .skill .skillIcon img,
-  main section .content .skills-container .skill .contactIcon img,
-  main section .content .skills-container .project .skillIcon img,
-  main section .content .skills-container .project .contactIcon img,
-  main section .content .skills-container .contact .skillIcon img,
-  main section .content .skills-container .contact .contactIcon img,
-  main section .content .projects-container .skill .skillIcon img,
-  main section .content .projects-container .skill .contactIcon img,
-  main section .content .projects-container .project .skillIcon img,
-  main section .content .projects-container .project .contactIcon img,
-  main section .content .projects-container .contact .skillIcon img,
-  main section .content .projects-container .contact .contactIcon img,
-  main section .content .contact-container .skill .skillIcon img,
-  main section .content .contact-container .skill .contactIcon img,
-  main section .content .contact-container .project .skillIcon img,
-  main section .content .contact-container .project .contactIcon img,
-  main section .content .contact-container .contact .skillIcon img,
-  main section .content .contact-container .contact .contactIcon img {
+main section .content .skills-container .skill .contactIcon img,
+main section .content .skills-container .project .skillIcon img,
+main section .content .skills-container .project .contactIcon img,
+main section .content .skills-container .contact .skillIcon img,
+main section .content .skills-container .contact .contactIcon img,
+main section .content .projects-container .skill .skillIcon img,
+main section .content .projects-container .skill .contactIcon img,
+main section .content .projects-container .project .skillIcon img,
+main section .content .projects-container .project .contactIcon img,
+main section .content .projects-container .contact .skillIcon img,
+main section .content .projects-container .contact .contactIcon img,
+main section .content .contact-container .skill .skillIcon img,
+main section .content .contact-container .skill .contactIcon img,
+main section .content .contact-container .project .skillIcon img,
+main section .content .contact-container .project .contactIcon img,
+main section .content .contact-container .contact .skillIcon img,
+main section .content .contact-container .contact .contactIcon img {
     width: 80px;
   }
   main section .content .skills-container .skill .projectIcon img,
-  main section .content .skills-container .project .projectIcon img,
-  main section .content .skills-container .contact .projectIcon img,
-  main section .content .projects-container .skill .projectIcon img,
-  main section .content .projects-container .project .projectIcon img,
-  main section .content .projects-container .contact .projectIcon img,
-  main section .content .contact-container .skill .projectIcon img,
-  main section .content .contact-container .project .projectIcon img,
-  main section .content .contact-container .contact .projectIcon img {
+main section .content .skills-container .project .projectIcon img,
+main section .content .skills-container .contact .projectIcon img,
+main section .content .projects-container .skill .projectIcon img,
+main section .content .projects-container .project .projectIcon img,
+main section .content .projects-container .contact .projectIcon img,
+main section .content .contact-container .skill .projectIcon img,
+main section .content .contact-container .project .projectIcon img,
+main section .content .contact-container .contact .projectIcon img {
     width: 130px;
   }
   main section .content .skills-container .project,
-  main section .content .projects-container .project,
-  main section .content .contact-container .project {
+main section .content .projects-container .project,
+main section .content .contact-container .project {
     margin: 15px 5px;
   }
   main section .content .contact {
     width: 100%;
   }
 }
-/*# sourceMappingURL=style.css.map */

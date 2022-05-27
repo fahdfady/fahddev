@@ -21,7 +21,7 @@
 
 :root {
     --main-color: #fff;
-    --secondary-color: rgb(139, 107, 209);
+    --secondary-color: #8b6bd1;
     --secondary-color-faded: rgba(139, 107, 209, 0.6);
     --third-color: rgb(61, 38, 112);
     --text-color: #000;
@@ -204,11 +204,13 @@ header {
         z-index: 99999;
         @include centerY();
         justify-content: space-between;
+        border-bottom: 1px solid #7e7e7e;
 
         .logo {
             font-size: var(--font-size-title);
             font-weight: bold;
-            text-transform: uppercase;
+            // text-transform: uppercase;
+            text-transform: capitalize;
             text-decoration: none;
             color: var(--secondary-color);
 
