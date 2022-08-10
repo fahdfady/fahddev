@@ -1,6 +1,7 @@
 import LoadingScreen from './components/loading'
 import Navbar from './components/navbar';
 import './style/App.css';
+import script from './script.js';
 // import './js/script.js'
 import { useState, useEffect } from 'react'
 import useFetch from './hooks/useFetch';
@@ -21,7 +22,9 @@ function App() {
 
   return (
     <div className="App">
-      <Cursor />
+
+      {/* <Cursor /> */}
+
       <div className="page-container">
 
         <div className="not-footer">
@@ -50,9 +53,10 @@ function App() {
         { socials && <Footer socials={ socials } /> }
 
       </div >
-
+<script src='./script.js'></script>
     </div >
   )
+  
 }
 
 export default App;
