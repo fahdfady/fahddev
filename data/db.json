@@ -1,9 +1,12 @@
 {
-    "information": {
-        "text": " I am a Front-End Web developer able to build a Web presence from the ground up - from concept, navigation, layout, resposive to UX . Skilled at writing well-designed, clean, testable and efficient code. in love with reactjs <3",
-        "jobTitle": "Front-end web developer",
-        "pic": "https://i.ibb.co/XDfd08f/personal-pic.png"
-    },
+    "information": [
+        {
+            "id": 1,
+            "text": " I am a Front-End Web developer able to build a Web presence from the ground up - from concept, navigation, layout, resposive to UX . Skilled at writing well-designed, clean, testable and efficient code. in love with reactjs <3",
+            "jobTitle": "Front-end web developer",
+            "pic": "https://i.ibb.co/XDfd08f/personal-pic.png"
+        }
+    ],
     "skills": [
         {
             "id": 1,

@@ -3,25 +3,25 @@ const Footer = ({ socials }) => {
 
         <footer className="page-footer">
 
-            <div class="footer-container">
-                <p class="name">
+            <div className="footer-container">
+                <p className="name">
                     Fahd Fady
                 </p>
 
-                <ul class="socialMedia">
+                <ul className="socialMedia">
 
 
                     { socials.map((social) => (
                         <li key={ social.id }>
                             <a href={ social.link } target="_balnk">
-                                <i class={ "fab fa-" + social.name }></i>
+                                <i className={ "fab fa-" + social.name }></i>
                             </a>
                         </li>
                     )) }
 
                 </ul>
 
-                <p class="email">
+                <p className="email">
                     fahd.fady212@gmail.com
                 </p>
             </div>

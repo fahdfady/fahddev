@@ -8,6 +8,7 @@ import Information from './components/information';
 import Skills from './components/skills';
 import Projects from './components/projects';
 import Footer from './components/footer';
+import Cursor from './components/cursor';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <Cursor />
       <div className="page-container">
 
         <div className="not-footer">

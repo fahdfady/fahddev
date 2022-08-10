@@ -1,21 +1,21 @@
 const Projects = ({ projects }) => {
     return (
-        <section class="container projects" id="projects">
-            <div class="content">
-                <h2 class="sectionTitle">
+        <section className="container projects" id="projects">
+            <div className="content">
+                <h2 className="sectionTitle">
                     my showcase
                 </h2>
 
-                <div class="projects-container">
+                <div className="projects-container">
                     { projects.map((project) => (
-                        <a key={ project.id } target="blank" href={ project.link } class="project">
-                            <span class="ribbon">
+                        <a key={ project.id } target="blank" href={ project.link } className="project">
+                            <span className="ribbon">
                                 { project.status }
                             </span>
-                            <div class="projectIcon">
+                            <div className="projectIcon">
                                 <img src={ project.img } alt={ project.name } />
                             </div>
-                            <div class="projectTitle">
+                            <div className="projectTitle">
                                 { project.name }
                             </div>
                         </a>
