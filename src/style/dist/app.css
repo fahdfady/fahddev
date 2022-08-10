@@ -219,7 +219,7 @@ main section .content {
   box-shadow: var(--shadow-default);
   border-radius: var(--border-radius);
   background-repeat: no-repeat;
-  background-image: url("../images/pattern-curve.svg");
+  background-image: url("../assets/pattern-curve.svg");
   background-color: #fff;
   background-position: bottom left;
 }
@@ -490,7 +490,7 @@ main section .imageFeild {
   padding: 50px;
   background-size: contain;
   background-position: center;
-  background-image: url("../img/pattern-bg.svg");
+  background-image: url("../assets/pattern-bg.svg");
   background-repeat: no-repeat;
   transform: translateY(20px);
   transition: all 1s;

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
 @import url("reset.css");
 /*==================== VARIABLES CSS ====================*/
 :root {
@@ -198,9 +199,14 @@ body {
   z-index: 999999;
 }
 
+.not-footer {
+  padding-bottom: 100px;
+}
+
 header {
   position: relative;
   padding: 0px 10px;
+  padding-bottom: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -301,7 +307,7 @@ main section .content {
           box-shadow: var(--shadow-default);
   border-radius: var(--border-radius);
   background-repeat: no-repeat;
-  background-image: url("../images/pattern-curve.svg");
+  background-image: url("../assets/pattern-curve.svg");
   background-color: #fff;
   background-position: bottom left;
 }
@@ -642,7 +648,7 @@ main section .imageFeild {
   padding: 50px;
   background-size: contain;
   background-position: center;
-  background-image: url("../img/pattern-bg.svg");
+  background-image: url("../assets/pattern-bg.svg");
   background-repeat: no-repeat;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);
@@ -712,7 +718,7 @@ footer.page-footer ul.socialMedia a {
 }
 
 footer.page-footer ul.socialMedia a:hover {
-  color: #323330;
+  color: var(--secondary-color);
 }
 
 footer.page-footer p.email {
@@ -1078,4 +1084,4 @@ footer.page-footer p.name {
     width: 100%;
   }
 }
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=app.css.map */
