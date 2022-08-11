@@ -23,14 +23,17 @@
   --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
 }
 
-::-moz-selection {
-  background: var(--secondary-color);
-  color: var(--bg-color);
+::-webkit-scrollbar {
+  width: 14px;
 }
 
-::selection {
-  background: var(--secondary-color);
-  color: var(--bg-color);
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-color);
+  border-radius: 4px;
 }
 
 *,
