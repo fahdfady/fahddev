@@ -22,7 +22,7 @@ const Information = ({ information }) => {
                             </div>
                         </div>
                         <div className="imageFeild">
-                            <img width="528" height="443" src={ info.pic } alt="Personal Picture" className="image" />
+                            <img src={ info.pic } alt="Personal Picture" className="image" />
                         </div>
                     </div>
                 )) }

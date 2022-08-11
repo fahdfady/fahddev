@@ -10,7 +10,7 @@ const Skills = ({ skills }) => {
                     { skills.map((skill) => (
                         <a key={ skill.id } href={ skill.link } target="blank" className="skill">
                             <div className="skillIcon">
-                                <img width="150" height="150" src={ skill.img } alt={ skill.name } />
+                                <img src={ skill.img } alt={ skill.name } />
                             </div>
                             <div className="skillTitle">
                                 { skill.name }

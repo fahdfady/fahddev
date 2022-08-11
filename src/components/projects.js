@@ -13,7 +13,7 @@ const Projects = ({ projects }) => {
                                 { project.status }
                             </span>
                             <div className="projectIcon">
-                                <img width="300" height="150" src={ project.img } alt={ project.name } />
+                                <img src={ project.img } alt={ project.name } />
                             </div>
                             <div className="projectTitle">
                                 { project.name }
