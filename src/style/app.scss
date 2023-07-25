@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css");
-@import url("reset.css");
+
+// npx tailwindcss -i ./src/style/app.css -o ./src/style/output.css --watch
 
 /*==================== VARIABLES CSS ====================*/
 
@@ -21,7 +22,6 @@
 }
 
 :root {
-    --main-color: #fff;
     --secondary-color: #8b6bd1;
     --secondary-color-faded: rgba(139, 107, 209, 0.6);
     --third-color: rgb(61, 38, 112);
@@ -32,17 +32,14 @@
     --font-family: "Inter", sans-serif;
     --font-size-title: 22px;
     --font-size-icon: 32px;
-    --default-padding: 20px;
-    --phone-padding: 8px;
-    --bg-color: #f0f0f0;
-    --border-radius: 6px;
+    --default-padding: 8px;
     --animation-timing: 0.2s;
     --shadow-default: 0 0 5px 3px rgba(0, 0, 0, 0.1);
     --shadow-hover: 0 0 5px 3px var(--secondary-color-faded);
 }
 
 ::-webkit-scrollbar {
-    width: 14px;
+    width: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -52,7 +49,7 @@
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--secondary-color);
-    border-radius: 4px;
+    border-radius: 0px;
     // border: 1px solid rgb(35, 21, 44)
 }
 
@@ -66,6 +63,9 @@
     scroll-behavior: smooth;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Font size for large devices */
 
@@ -74,6 +74,8 @@ body {
     font-size: 16px;
     text-transform: capitalize;
     overflow-x: hidden;
+    background: #0e001b;
+    color: #fff;
 }
 
 .page-container {
@@ -120,8 +122,8 @@ body {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            -webkit-animation: loader-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
-            animation: loader-outter 1s cubic-bezier(.42, .61, .58, .41) infinite;
+            -webkit-animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+            animation: loader-outter 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
         }
 
         .loader-inner {
@@ -134,8 +136,8 @@ body {
             top: calc(50% - 20px);
             border-right: 0;
             border-top-color: transparent;
-            -webkit-animation: loader-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
-            animation: loader-inner 1s cubic-bezier(.42, .61, .58, .41) infinite;
+            -webkit-animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
+            animation: loader-inner 1s cubic-bezier(0.42, 0.61, 0.58, 0.41) infinite;
         }
     }
 }
@@ -174,7 +176,7 @@ body {
         top: 9px;
         left: 9px;
         -webkit-transition: none;
-        transition: .09s;
+        transition: 0.09s;
         pointer-events: none;
         z-index: 9999999;
     }
@@ -198,81 +200,13 @@ body {
     padding-bottom: 100px;
 }
 
-header {
-    position: relative;
-    padding: 0px 10px;
-    padding-bottom: 50px;
-    @include centerAll();
-
-    a {
-        transition: 0.15s all linear;
-    }
-
-    nav.navbar {
-        background: #f8f8f8;
-        width: 100%;
-        padding: 0px 20px;
-        height: 50px;
-        // margin-bottom: 50px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 99999;
-        @include centerY();
-        justify-content: space-between;
-        border-bottom: 1px solid #7e7e7e;
-
-        .logo {
-            font-size: var(--font-size-title);
-            font-weight: bold;
-            // text-transform: uppercase;
-            text-transform: capitalize;
-            text-decoration: none;
-            color: var(--secondary-color);
-
-            &:hover {
-                color: var(--text-color);
-            }
-        }
-
-        ul {
-            display: flex;
-            gap: 0px 8px;
-
-            li {
-                a {
-                    text-decoration: none;
-                    color: var(--text-color);
-
-                    &:hover {
-                        color: var(--secondary-color);
-                    }
-
-                }
-            }
-        }
-    }
-}
-
 main {
     section {
         display: flex;
         justify-content: center;
         align-items: center;
         padding: var(--default-padding);
-        background-color: var(--bg-color);
         min-height: 95vh;
-
-        // &.containerActive {
-
-        //     .textFeild,
-        //     .imageFeild {
-        //         transform: translateY(0px) !important;
-        //         opacity: 1 !important;
-        //         visibility: visible !important;
-        //     }
-        // }
 
         .content {
             @include centerX();
@@ -280,13 +214,7 @@ main {
             min-width: var(--min-width);
             max-width: var(--max-width);
             min-height: var(--min-height);
-            padding: calc(var(--default-padding) * 2);
-            box-shadow: var(--shadow-default);
-            border-radius: var(--border-radius);
-            background-repeat: no-repeat;
-            background-image: url("../assets/pattern-curve.svg");
-            background-color: #fff;
-            background-position: bottom left;
+            background-color: transparent;
 
             .textFeild {
                 flex: 1;
@@ -309,12 +237,6 @@ main {
 
                     .authorName {
                         font-weight: 700;
-                    }
-
-                    .authorJob {
-                        font-weight: 500;
-                        margin-left: 5px;
-                        color: #747376;
                     }
                 }
 
@@ -348,20 +270,17 @@ main {
 
             .info-container,
             .skills-container,
-            .projects-container,
             .contact-container {
                 display: flex;
             }
 
             .skills-container,
-            .projects-container,
             .contact-container {
                 justify-content: center;
                 flex-wrap: wrap;
                 padding: clc(var(--default-padding) / 2);
 
                 .skill,
-                .project,
                 .contact {
                     position: relative;
                     @include centerY();
@@ -372,47 +291,9 @@ main {
                     padding-bottom: 0px;
                     box-shadow: var(--shadow-default);
                     text-decoration: none;
-                    color: #000;
                     transition: 0.15s all linear;
 
-                    .ribbon {
-                        position: absolute;
-                        top: -4px;
-                        right: 5px;
-                        z-index: 99;
-                        background: var(--secondary-color);
-                        color: #fff;
-                        padding: 10px;
-
-                        &::after {
-                            content: "";
-                            position: absolute;
-                            left: -4px;
-                            top: 0;
-                            width: 0;
-                            height: 0;
-                            border-style: solid;
-                            border-width: 4px 0 0 4px;
-                            -webkit-transform: rotate(270deg);
-                            transform: rotate(270deg);
-                            border-color: transparent transparent transparent #634e5b;
-                        }
-
-                        &::before {
-                            content: "";
-                            position: absolute;
-                            right: -4px;
-                            top: 0;
-                            width: 0;
-                            height: 0;
-                            border-style: solid;
-                            border-width: 4px 0 0 4px;
-                            border-color: transparent transparent transparent #634e5b;
-                        }
-                    }
-
                     .skillTitle,
-                    .projectTitle,
                     .contactTitle {
                         font-size: 1em;
                         font-weight: bold;
@@ -433,16 +314,6 @@ main {
                         }
                     }
 
-                    .projectIcon {
-                        position: relative;
-
-                        img {
-                            width: 300px;
-                        }
-
-
-                    }
-
                     &:hover,
                     &:focus {
                         box-shadow: var(--shadow-hover);
@@ -456,18 +327,6 @@ main {
         }
 
         .imageFeild {
-            flex: 1;
-            max-width: 60%;
-            display: flex;
-            align-items: center;
-            padding: 50px;
-            background-size: contain;
-            background-position: center;
-            background-image: url("../assets/pattern-bg.svg");
-            background-repeat: no-repeat;
-            transform: translateY(20px);
-            transition: all 1s;
-
             .image {
                 width: 100%;
                 border-radius: var(--border-radius);
@@ -488,458 +347,38 @@ main {
     }
 }
 
-footer.page-footer {
+.ribbon {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: var(--bg-color);
-    color: #6c757d;
-    width: 100%;
-    user-select: none;
-    text-align: center;
+    top: -4px;
+    right: 15px;
+    z-index: 99;
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 10px;
 
-    ul.socialMedia {
-        margin: auto;
-        padding: 10px 0px;
-        @include centerX();
-        gap: 13px;
-
-        a {
-            font-size: 1.313rem;
-            color: #55616c;
-            transition: .2s all ease-in-out;
-
-            &:hover {
-                color: var(--secondary-color);
-            }
-        }
+    &::after {
+        content: "";
+        position: absolute;
+        left: -4px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+        border-color: transparent transparent transparent #634e5b;
     }
 
-    p.email {
-        user-select: text;
-        font-size: 16px;
-        margin: 10px 0px;
-    }
-
-    p.name {
-        font-size: 20px;
-        padding: 10px;
-    }
-}
-
-@media (max-width:960px) {
-
-    .cursor,
-    .dot {
-        display: none;
-    }
-
-    main {
-        section {
-            min-height: 50vh;
-
-            .content {
-
-                .skills-container,
-                .projects-container,
-                .contact-container {
-
-                    .skill,
-                    .project,
-                    .contact {
-
-                        .skillTitle,
-                        .projectTitle,
-                        .contactTitle {}
-
-                        .skillIcon,
-                        .contactIcon {
-                            img {}
-
-                            i {}
-                        }
-
-                        .projectIcon {
-                            img {
-                                width: 275px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-
-}
-
-@media (max-width: 768px) {
-
-    main {
-        section {
-            min-height: 70vh;
-
-            flex-direction: column;
-            padding: 10px;
-
-            .imageFeild {
-                padding: 30px;
-                margin: 0 -10px;
-            }
-
-            .content {
-                flex-direction: column;
-                height: auto;
-                max-height: inherit;
-                padding: 15px;
-
-                .info-container {
-                    flex-direction: column-reverse;
-                    align-items: center;
-                    gap: 60px 0px;
-
-                    .textFeild {
-                        .authorInfo {
-                            display: flex;
-                            flex-direction: column;
-                        }
-
-                        .authorJob {
-                            margin-left: 0;
-                            margin-top: 5px;
-                        }
-                    }
-                }
-
-                .skills-container,
-                .projects-container,
-                .contact-container {
-
-                    .skill,
-                    .project,
-                    .contact {
-
-                        .skillTitle,
-                        .projectTitle,
-                        .contactTitle {}
-
-                        .skillIcon,
-                        .contactIcon {
-                            img {}
-
-                            i {}
-                        }
-
-                        .projectIcon {
-                            img {
-                                width: 270px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    p.text {
-        font-size: 22px;
-        line-height: 32px;
-    }
-
-}
-
-@media (max-width:600px) {
-    main {
-        section {
-
-            .imageFeild {}
-
-            .content {
-
-                .info-container {
-
-                    .textFeild {
-                        .authorInfo {}
-
-                        .authorJob {}
-
-                        .socialLinks {
-                            a {}
-                        }
-
-                        p.text {
-                            font-size: 18px;
-                        }
-                    }
-                }
-
-                .skills-container,
-                .projects-container,
-                .contact-container {
-
-                    .skill,
-                    .project,
-                    .contact {
-
-                        .skillTitle,
-                        .projectTitle,
-                        .contactTitle {}
-
-                        .skillIcon,
-                        .contactIcon {
-                            img {}
-
-                            i {}
-                        }
-
-                        .projectIcon {
-                            img {
-                                width: 205px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width:500px) {
-    header {
-        nav.navbar {
-            padding: 0px 2px;
-
-            ul {
-                gap: 0px 6px;
-
-                li {
-                    a {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-    }
-
-    main {
-        section {
-            .sectionTitle {
-                margin: 10px 0px;
-            }
-
-            .imageFeild {}
-
-            .content {
-                padding: var(--phone-padding);
-
-                .info-container {
-
-                    .imageFeild {
-                        max-width: 80%;
-                        padding: 20px;
-                    }
-
-                    .textFeild {
-                        .authorInfo {}
-
-                        .authorJob {}
-
-                        .socialLinks {
-                            a {}
-                        }
-                    }
-                }
-
-                .skills-container,
-                .projects-container,
-                .contact-container {
-
-                    .skill,
-                    .project,
-                    .contact {
-                        padding: 2px;
-                        margin: 15px 10px;
-
-                        .ribbon {
-                            padding: 6px;
-                            font-size: 12px;
-                        }
-
-                        .skillTitle,
-                        .projectTitle,
-                        .contactTitle {
-                            margin: 10px;
-                            padding: 0px;
-                        }
-
-                        .skillIcon,
-                        .contactIcon {
-                            img {
-                                width: 85px;
-                            }
-
-                            i {}
-                        }
-
-                        .projectIcon {
-                            img {
-                                width: 145px;
-                            }
-                        }
-                    }
-
-                    .skill {
-                        padding: 6px;
-                        margin: 15px;
-                        width: 35%;
-                    }
-                }
-
-                .contact {
-                    width: 100%;
-                }
-            }
-        }
-    }
-}
-
-@media (max-width:375px) {
-    header {
-        nav.navbar {
-            .logo {
-                font-size: 16px;
-            }
-        }
-    }
-
-    main {
-        section {
-            .sectionTitle {
-                font-size: 20px;
-            }
-
-            .imageFeild {}
-
-            .content {
-                padding: var(--phone-padding);
-
-                .info-container {
-
-                    .imageFeild {
-                        max-width: 80%;
-                        padding: 20px;
-                    }
-
-                    .textFeild {
-                        .authorInfo {}
-
-                        .authorJob {}
-
-                        .socialLinks {
-                            a {}
-                        }
-
-                        p.text {
-                            font-size: 16px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width:280px) {
-    header {
-        nav.navbar {
-            .logo {
-                font-size: 14px;
-            }
-
-            ul {
-                gap: 3px 0px;
-            }
-        }
-    }
-
-    main {
-        section {
-            .sectionTitle {
-                font-size: 18px;
-            }
-
-            .imageFeild {}
-
-            .content {
-                .info-container {
-
-                    .imageFeild {
-                        max-width: 80%;
-                        padding: 20px;
-                    }
-
-                    .textFeild {
-                        .authorInfo {}
-
-                        .authorJob {}
-
-                        .socialLinks {
-                            a {}
-                        }
-                    }
-                }
-
-                .skills-container,
-                .projects-container,
-                .contact-container {
-                    .skill {
-                        width: 35%;
-                    }
-
-                    .skill,
-                    .project,
-                    .contact {
-                        padding: 2px;
-                        margin: 15px 12px;
-
-                        .ribbon {
-                            padding: 6px;
-                            font-size: 12px;
-                        }
-
-                        .skillTitle,
-                        .projectTitle,
-                        .contactTitle {
-                            margin: 10px;
-                            padding: 0px;
-                        }
-
-                        .skillIcon,
-                        .contactIcon {
-                            img {
-                                width: 80px;
-                            }
-
-                            i {}
-                        }
-
-                        .projectIcon {
-                            img {
-                                width: 130px;
-                            }
-                        }
-                    }
-
-                    .project {
-                        margin: 15px 5px;
-                    }
-                }
-
-                .contact {
-                    width: 100%;
-                }
-            }
-        }
+    &::before {
+        content: "";
+        position: absolute;
+        right: -4px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 0 0 4px;
+        border-color: transparent transparent transparent #634e5b;
     }
 }
