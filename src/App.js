@@ -1,6 +1,6 @@
 import LoadingScreen from './components/loading'
 import Navbar from './components/navbar';
-import './style/App.css';
+import './style/output.css';
 import script from './script.js';
 // import './js/script.js'
 import { useState, useEffect } from 'react'
@@ -17,7 +17,11 @@ function App() {
   const { data: information, isPending, error } = useFetch("information");
   const { data: skills } = useFetch("skills");
   const { data: projects } = useFetch("projects");
-  const { data: socials } = useFetch("socials");
+  const { data: socialsfriends } = useFetch("socials?type=friends");
+  const { data: socialsformal } = useFetch("socials?type=formal");
+
+
+  // const { data: players, error, isPending } = useFetch(`players?game=${gamename}`);
 
 
   return (
@@ -27,36 +31,33 @@ function App() {
 
       <div className="page-container">
 
-        <div className="not-footer">
+        <Navbar />
 
-          <Navbar />
-          <main className="page-body">
+        <main className="page-body">
 
-            { error && <div className="error">{ error }</div> }
+          {error && <div className="error">{error}</div>}
 
-            { isPending &&
-              <div className="loading">
-                <LoadingScreen />
-              </div>
-            }
+          {isPending &&
+            <div className="loading">
+              <LoadingScreen />
+            </div>
+          }
 
-            { information && <Information information={ information } /> }
+          {information && <Information information={information} />}
 
-            { skills && <Skills skills={ skills } /> }
+          {skills && <Skills skills={skills} />}
 
-            { projects && <Projects projects={ projects } /> }
+          {projects && <Projects projects={projects} />}
 
-          </main>
+        </main>
 
-        </div>
+        {socialsformal && <Footer socialsfriends={socialsfriends} socialsformal={socialsformal} />}
 
-        { socials && <Footer socials={ socials } /> }
-
-      </div >
-<script src='./script.js'></script>
+      </div>
+      <script src='./script.js'></script>
     </div >
   )
-  
+
 }
 
 export default App;

@@ -1,6 +1,6 @@
 const Skills = ({ skills }) => {
     return (
-        <section className="container skills" id="skills">
+        <section className="skills" id="skills">
             <div className="content">
                 <h2 className="sectionTitle">
                     my skills
@@ -8,9 +8,9 @@ const Skills = ({ skills }) => {
 
                 <div className="skills-container">
                     { skills.map((skill) => (
-                        <a key={ skill.id } href={ skill.link } target="blank" className="skill">
+                        <a key={ skill.id } href={ skill.link } target="blank" className="skill max-lg:w-1/5">
                             <div className="skillIcon">
-                                <img src={ skill.img } alt={ skill.name } />
+                                <img  src={ skill.img } alt={ skill.name } />
                             </div>
                             <div className="skillTitle">
                                 { skill.name }
