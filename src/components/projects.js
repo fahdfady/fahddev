@@ -40,7 +40,7 @@ const Projects = ({ projects }) => {
                                     {project.des}
                                 </p>
 
-                                <a class="inline-flex items-center h-8 px-4 m-2 text-md text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-md focus:shadow-outline hover:bg-indigo-800" href={project.link} target="blank">Visit</a>
+                                <a className="inline-flex items-center h-8 px-4 m-2 text-md text-indigo-100 transition-colors duration-150 bg-indigo-700 rounded-md focus:shadow-outline hover:bg-indigo-800" href={project.link} target="blank">Visit</a>
                             </div>
                         </div>
                     ))}
