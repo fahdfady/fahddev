@@ -162,7 +162,7 @@ main section {
   justify-content: center;
   align-items: center;
   padding: var(--default-padding);
-  min-height: 95vh;
+  min-height: 76vh;
 }
 main section .content {
   display: flex;
