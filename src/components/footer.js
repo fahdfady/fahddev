@@ -1,7 +1,7 @@
 const Footer = ({ socialsfriends, socialsformal }) => {
     return (
 
-        <footer className="page-footer flex flex-col gap-4 px-2">
+        <footer id="contact" className="page-footer flex flex-col gap-4 px-2">
             <h1 className="text-3xl text-center font-bold text-[#b071ff]">Fahd Ashour</h1>
 
             <div className="flex flex-col items-center">
@@ -10,9 +10,9 @@ const Footer = ({ socialsfriends, socialsformal }) => {
                 </h2>
 
                 <div className="flex justify-center gap-6 my-3">
-                    {socialsfriends.map((social) => (
-                        <a key={social.id} href={social.link} title={social.name} className="text-2xl duration-300 hover:text-violet-500 focus:text-violet-500 active:text-violet-700 focus:outline-none focus:ring focus:ring-violet-300  ">
-                            <i className={"fa-brands fa-" + social.name} ></i>
+                    {socialsfriends.map((socialfriends) => (
+                        <a key={socialfriends.id} href={socialfriends.link} title={socialfriends.name} className="text-2xl duration-300 hover:text-violet-500 focus:text-violet-500 active:text-violet-700 focus:outline-none focus:ring focus:ring-violet-300  ">
+                            <i className={"fa-brands fa-" + socialfriends.name} ></i>
                         </a>
                     ))}
                 </div>
@@ -24,9 +24,9 @@ const Footer = ({ socialsfriends, socialsformal }) => {
                 </h2>
 
                 <div className="flex justify-center gap-6 my-3">
-                    {socialsformal.map((social) => (
-                        <a key={social.id} href={social.link} title={social.name} className="text-2xl duration-300 hover:text-violet-500 focus:text-violet-500 active:text-violet-700 focus:outline-none focus:ring focus:ring-violet-300  ">
-                            <i className={"fa-brands fa-" + social.name} ></i>
+                    {socialsformal.map((socialformal) => (
+                        <a key={socialformal.id} href={socialformal.link} title={socialformal.name} className="text-2xl duration-300 hover:text-violet-500 focus:text-violet-500 active:text-violet-700 focus:outline-none focus:ring focus:ring-violet-300  ">
+                            <i className={"fa-brands fa-" + socialformal.name} ></i>
                         </a>
                     ))}
                 </div>
