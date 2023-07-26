@@ -1283,6 +1283,11 @@ main section .sectionTitle {
   color: rgb(139 92 246 / var(--tw-text-opacity));
 }
 
+.hover\:text-purple-700:hover{
+  --tw-text-opacity: 1;
+  color: rgb(126 34 206 / var(--tw-text-opacity));
+}
+
 .focus\:text-violet-500:focus{
   --tw-text-opacity: 1;
   color: rgb(139 92 246 / var(--tw-text-opacity));
@@ -1338,6 +1343,11 @@ main section .sectionTitle {
   .dark\:hover\:text-white:hover{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .dark\:hover\:text-purple-500:hover{
+    --tw-text-opacity: 1;
+    color: rgb(168 85 247 / var(--tw-text-opacity));
   }
 }
 
