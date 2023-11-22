@@ -153,10 +153,6 @@ body {
   z-index: 999999;
 }
 
-.not-footer {
-  padding-bottom: 100px;
-}
-
 main section {
   display: flex;
   justify-content: center;

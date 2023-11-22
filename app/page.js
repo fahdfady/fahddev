@@ -9,12 +9,16 @@ import Cursor from './components/cursor';
 import useFetch from './hooks/useFetch';
 
 export default function Home() {
-  const { data: information } = useFetch("information");
+  const { data: information, isPending, error } = useFetch("information");
   const { data: skills } = useFetch("skills");
   const { data: projects } = useFetch("projects");
   return (
 
-    <main className="min-h-screen">
+    <>
+
+      {error && <>{error}</>}
+
+      {isPending && <>Loading..</>}
 
       {information && <Information information={information} />}
 
@@ -22,6 +26,6 @@ export default function Home() {
 
       {projects && <Projects projects={projects} />}
 
-    </main >
+    </>
   )
 }

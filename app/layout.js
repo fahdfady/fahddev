@@ -31,7 +31,9 @@ export default function RootLayout({ children }) {
         <Suspense fallback={<LoadingScreen />}>
           <Navbar />
 
-          {children}
+          <main className="min-h-[55vh]">
+            {children}
+          </main>
         </Suspense>
 
 
