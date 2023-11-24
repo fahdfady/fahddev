@@ -4,7 +4,7 @@ const Footer = ({ socialsfriends, socialsformal }) => {
     return (
 
         <footer id="contact" className="page-footer flex flex-col gap-4 py-4 px-2">
-            <h1 className="text-3xl text-center font-bold text-[#b071ff]">Fahd Ashour</h1>
+            <h3 className="text-3xl text-center font-bold text-[#b071ff]">Fahd Ashour</h3>
 
             <div className="flex flex-col items-center">
                 <h2 className="text-xl text-center font-light dark:text-slate-400 max-sm:text-base">
