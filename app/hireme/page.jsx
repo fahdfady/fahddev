@@ -15,7 +15,7 @@ export default function HireMe() {
                                 <p className="text-slate-300">I will help you in  transforming your designs or ideas into dynamic, adaptable, responsive , efficient, user-friendly and future-proof web pages.</p>
                             </header>
 
-                            <ul className="my-3 text-start list-disc">
+                            <ul className="my-3 ps-6 space-y-2 text-start list-disc">
                                 <li>Implementing your .PSD files, Sketches, Ideas into a real website</li>
                                 <li>Developing responsive and interactive web pages that work well on different devices and browsers.</li>
                                 <li>Using the latest web technologies and frameworks to ensure your website is fast, secure and easy to maintain.</li>
