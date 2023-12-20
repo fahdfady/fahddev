@@ -167,7 +167,7 @@ main section {
   display: flex;
   justify-content: center;
   align-items: center;
-  @apply max-w-screen-xl min-h-[85vh] mx-auto py-2;
+  @apply max-w-screen-xl min-h-[65vh] mx-auto py-6;
 }
 
 .sectionTitle {
