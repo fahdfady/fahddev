@@ -26,8 +26,8 @@ export default function RootLayout({
         <meta name="description" content="Fahd Fady Ashour's Personal Portfolio" />
         <meta name="keywords" content="Fahddev, Fahd Fady, Fahd Ashour, Fahd Fady Ashour, HTML, CSS, JavaScript, React, Next, Tailwind, Frontend, Developer" />
         <meta name="theme-color" content="#8b6bd1" />
-        <link rel="apple-touch-icon" href="personal-pic.webp" />
-        <link rel="icon" href="personal-pic.webp" />
+        <link rel="apple-touch-icon" href="/personal-pic.webp" />
+        <link rel="icon" href="/personal-pic.webp" />
       </head>
       <body className={inter.className}>
         <Navbar />
