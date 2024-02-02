@@ -1,5 +1,3 @@
-'use client'
-
 // import { useFetch } from './hooks/useFetch';
 import Information from './components/information';
 import Skills from './components/skills';
