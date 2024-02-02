@@ -1,21 +1,8 @@
-import { useEffect, useState } from "react";
 import { apiURL } from '../constants';
 
-const fetchSkills = async () => {
+const Skills = async () => {
     const response = await fetch(`${apiURL}skills`, { cache: 'no-store' });
     const skillsList = await response.json();
-    return skillsList;
-}
-
-const Skills = () => {
-    const [skills, setSkills] = useState([]);
-    useEffect(() => {
-        const getSkills = async () => {
-            const skillsData = await fetchSkills();
-            setSkills(skillsData);
-        };
-        getSkills();
-    }, []);
 
     return (
         <section className="skills" id="skills">
@@ -25,7 +12,7 @@ const Skills = () => {
                 </h2>
 
                 <div className="grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-6 gap-x-3 sm:gap-8 ">
-                    {skills.map((skill) => (
+                    {skillsList.map((skill: { id: number; link: string; name: string; }) => (
                         <a key={skill.id} href={skill.link} target="blank" className="skill flex flex-col justify-center items-center p-2 bg-white rounded-lg shadow transform hover:scale-105 hover:shadow-lg transition duration-300 ease-in-out">
                             <div className="max-sm:h-[80px] relative">
                                 {/* Use icons instead of images */}

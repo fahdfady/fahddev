@@ -1,23 +1,9 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { apiURL } from '../constants';
 
-const fetchProjects = async () => {
+const Projects = async () => {
     const response = await fetch(`${apiURL}projects`, { cache: 'no-store' });
     const projectsList = await response.json();
-    return projectsList;
-}
-
-const Projects = () => {
-    const [projects, setProjects] = useState([]);
-
-    useEffect(() => {
-        const getProjects = async () => {
-            const projectsData = await fetchProjects();
-            setProjects(projectsData);
-        };
-        getProjects();
-    }, []);
 
     return (
         <section className="projects" id="projects">
@@ -27,7 +13,9 @@ const Projects = () => {
                 </h2>
 
                 <div className="projects-container grid grid-cols-3 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-                    {projects.map((project) => (
+                    {projectsList.map((project: {
+                        id: number; name: string; img: string; link: string; des: string; status: string;
+                    }) => (
                         <a href={project.link} key={project.id} className="text-center flex flex-col items-center justify-start gap-4 p-2 m-4 bg-white text-gray-800 rounded-lg shadow-md group animate-slide-in-left hover:bg-[#3b2550] focus:bg-[#2f0259] hover:text-white focus:text-white hover:border-indigo-700 focus:border-indigo-900 hover:shadow-lg focus:shadow-xl hover:scale-105 focus:scale-110 transition duration-300 ease-in-out" target={"blank_"}>
 
                             <div className="w-full h-[210px] max-lg:h-[150px] max-sm:h-[100px] relative">

@@ -1,7 +1,4 @@
-'use client'
-
 import './globals.css';
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
@@ -31,12 +28,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Navbar />
-        
+
         <main>
           {children}
         </main>
 
         <Footer />
+
+        {/* import flowbite via script tag cuz i cannot use it in react propely */}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
       </body>
     </html>
   )
