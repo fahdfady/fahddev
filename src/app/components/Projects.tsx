@@ -4,32 +4,36 @@ import Image from "next/image"
 type TProject = {
     name: string;
     year: string;
+    image?: JSX.Element,
     description: JSX.Element;
     link: string;
 }
 
 const projects: TProject[] = [
     {
+        name: "Lucky Market",
+        year: "2021",
+        image: <Image src="/projects/luckymarket.jpg" alt="thumbnail" width={150} height={150} className="mx-auto object-cover size-full" />,
+        description: <p>Freelance project. A platform where you can host your E-store for selling E-products and manage your earnings.</p>,
+        link: "https://luckymarket.net/",
+    },
+    {
+        name: "react-like library",
+        year: "2025",
+        description: <p>A simulation of how react works for learning purposes. still working on it.</p>,
+        link: "https://github.com/fahdfady/react-from-scratch",
+    },
+    {
         name: "Duolingo Clone",
         year: "2024",
-        description: <p>A Duolingo clone</p>,
+        image: <Image src="/projects/lingo.jpg" alt="thumbnail" width={150} height={150} className="mx-auto object-cover size-full" />,
+        description: <p>A Fullstack Duolingo clone using Nextjs. Made alongside a tutorial</p>,
         link: "https://lingo-two-chi.vercel.app/",
     },
     {
         name: "Duolingo Clone",
         year: "2024",
-        description: <p></p>,
-        link: "https://lingo-two-chi.vercel.app/",
-    },
-    {
-        name: "Duolingo Clone",
-        year: "2024",
-        description: <p></p>,
-        link: "https://lingo-two-chi.vercel.app/",
-    },
-    {
-        name: "Duolingo Clone",
-        year: "2024",
+        image: <Image src="" alt="thumbnail" width={150} height={150} />,
         description: <p></p>,
         link: "https://lingo-two-chi.vercel.app/",
     }
@@ -53,14 +57,17 @@ export function Projects() {
 
 
 function ProjectCard({ project }: { project: TProject }) {
-    const { link, name, year, description } = project;
+    const { link, name, year, description, image } = project;
 
 
     return (
-        <a href={link} className="p-4 border-muted border border-solid decoration-transparent flex flex-col gap-y-2">
+        <a href={link} className="p-4 border-muted border border-solid decoration-transparent flex flex-col gap-y-2" target="_blank">
+            <div className="min-h-[150px] max-h-[150px]">
+                {image && image}
+            </div>
             <h5 className="text-lg text-muted-foreground">{year}</h5>
             <h3 className="text-2xl font-semibold">{name}</h3>
-
+            {description}
             <a href={link}>{link}</a>
         </a>
     )

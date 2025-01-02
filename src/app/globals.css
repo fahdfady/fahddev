@@ -5,14 +5,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --muted: #a8a8a8;
-  --muted-foreground: #6b6b6b;
+  --muted: 220 14.3% 95.9%;
+  --muted-foreground: 220 8.9% 46.1%;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --muted: 215 27.9% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
   }
 }
 
