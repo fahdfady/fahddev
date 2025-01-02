@@ -1,7 +1,8 @@
 import { GithubIcon, LinkedinIcon, XIcon } from "lucide-react";
 import Image from "next/image";
-import SpidermanGIF from "./components/SpidermanGIF";
-import { Projects } from "./components/Projects";
+import SpidermanGIF from "@/components/SpidermanGIF";
+import { Projects } from "@/components/Projects";
+import { Toolkit } from "@/components/Toolkit";
 
 export default function Home() {
   return (
@@ -45,6 +46,8 @@ export default function Home() {
       <SpidermanGIF />
 
       <Projects />
+
+      <Toolkit />
     </main>
   );
 }
