@@ -31,7 +31,7 @@ export default function Home() {
           </li>
           <li className="flex items-center">
             <LinkedinIcon className="size-8 me-2" />
-            <a href="https://linkedin.com/in/fahd-ashour" target="_blank">https://linkedin.com/in/fahd-ashour</a>
+            <a href="https://linkedin.com/in/fahdashour" target="_blank">https://linkedin.com/in/fahdashour</a>
           </li>
         </ul>
       </section>
