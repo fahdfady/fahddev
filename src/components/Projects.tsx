@@ -45,7 +45,7 @@ export function Projects() {
         <section aria-label="projects" id="projects">
             <h2 className="text-4xl text-muted-foreground mb-5"><a href="#projects" className="decoration-purple-950 hover:bg-transparent">Projects</a></h2>
 
-            <div className="grid grid-cols-2 gap-x-3 gap-y-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-3 gap-y-4">
                 {projects.map((project, index) => (
                     <ProjectCard project={project} key={index} />
                 ))}
@@ -61,7 +61,7 @@ function ProjectCard({ project }: { project: TProject }) {
 
 
     return (
-        <a href={link} className="p-4 border-muted border border-solid decoration-transparent flex flex-col gap-y-2" target="_blank">
+        <a href={link} className="p-4 border-muted border border-solid decoration-transparent flex flex-col gap-y-2 overflow-hidden" target="_blank">
             <div className="min-h-[150px] max-h-[150px]">
                 {image && image}
             </div>
