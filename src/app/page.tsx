@@ -46,6 +46,7 @@ export default function Home() {
         <p className="text-xl">co-founding <a href="https://x.com/OblienHQ" className="text-black dark:text-white font-bold" target="_blank">Oblien</a>, a tech startup that has upcoming product yet to be announced.</p>
         <p className="text-xl"> Building <a href="https://x.com/BLEU_io" className="text-blue-800 font-bold" target="_blank">BLEU Community</a>, a Discord-based community for people interested in computer science..</p>
         <p className="text-xl">What am I looking forward to do in my career? Learning how Front-end Frameworks works. <a href="https://github.com/fahdfady/yaseer" target="_blank">Building my own Framework</a>, Contibuting to open-source projects that I'm genuinely interested in. Passing my knowledge to others via my <a href="https://x.com/fahdashwr" target="_blank">Twitter account</a> and <Link href="/blog" target="_blank">Blog</Link>.</p>
+        <p className="text-xl"> <a href="https://drive.google.com/file/d/1bCnRsZiWBCsoG6e3SUNW-eIaN8Jr6bIu/view?usp=drive_link" target="_blank">link to my resume</a></p>
       </section>
 
       <SpidermanGIF />

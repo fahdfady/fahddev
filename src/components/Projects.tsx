@@ -31,11 +31,11 @@ const projects: TProject[] = [
         link: "https://lingo-two-chi.vercel.app/",
     },
     {
-        name: "Duolingo Clone",
-        year: "2024",
-        image: <Image src="" alt="thumbnail" width={150} height={150} />,
-        description: <p></p>,
-        link: "https://lingo-two-chi.vercel.app/",
+        name: "BLEU Website",
+        year: "2025",
+        image: <Image src="/projects/bleu.png" alt="thumbnail" width={150} height={150} className="mx-auto object-cover size-full" />,
+        description: <p>A website for a community that I'm co-founding. It's a Discord-based community for people interested in computer science.</p>,
+        link: "https://bleu-website.vercel.app/",
     }
 ]
 
@@ -61,7 +61,7 @@ function ProjectCard({ project }: { project: TProject }) {
 
 
     return (
-        <a href={link} className="p-4 border-muted border border-solid decoration-transparent flex flex-col gap-y-2 overflow-hidden" target="_blank">
+        <a href={link} className="pb-2 pt-1 px-2 border-muted border border-solid decoration-transparent flex flex-col gap-y-2 overflow-hidden" target="_blank">
             <div className="min-h-[150px] max-h-[150px]">
                 {image && image}
             </div>
