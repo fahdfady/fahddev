@@ -34,7 +34,7 @@ const projects: TProject[] = [
         name: "BLEU Website",
         year: "2025",
         image: <Image src="/projects/bleu.png" alt="thumbnail" width={150} height={150} className="mx-auto object-cover size-full" />,
-        description: <p>A website for a community that I'm co-founding. It's a Discord-based community for people interested in computer science.</p>,
+        description: <p>A website for a community that I&apos;m co-founding. It&apos;s a Discord-based community for people interested in computer science.</p>,
         link: "https://bleu-website.vercel.app/",
     }
 ]
