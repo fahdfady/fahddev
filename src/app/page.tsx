@@ -3,6 +3,7 @@ import Image from "next/image";
 import SpidermanGIF from "@/components/SpidermanGIF";
 import { Projects } from "@/components/Projects";
 import { Toolkit } from "@/components/Toolkit";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -42,8 +43,9 @@ export default function Home() {
       <section aria-label="about" className="space-y-4">
         {/* TODO: add icons for everything */}
         <p className="text-xl">Currently learning Computer Science. Intrested in Web Development, <a href="https://react.dev">React JS</a>, and <a href="https://rust-lang.org">Rust</a>.</p>
+        <p className="text-xl">co-founding <a href="https://x.com/OblienHQ" className="text-black dark:text-white font-bold" target="_blank">Oblien</a>, a tech startup that has upcoming product yet to be announced.</p>
         <p className="text-xl"> Building <a href="https://x.com/BLEU_io" className="text-blue-800 font-bold" target="_blank">BLEU Community</a>, a Discord-based community for people interested in computer science..</p>
-        <p className="text-xl">What am I looking forward to do in my career? Learning how Front-end Frameworks works. <a href="https://github.com/fahdfady/yaseer" target="_blank">Building my own Framework</a>, Contibuting to open-source projects. Working with Rust on projects.</p>
+        <p className="text-xl">What am I looking forward to do in my career? Learning how Front-end Frameworks works. <a href="https://github.com/fahdfady/yaseer" target="_blank">Building my own Framework</a>, Contibuting to open-source projects that I'm genuinely interested in. Passing my knowledge to others via my <a href="https://x.com/fahdashwr" target="_blank">Twitter account</a> and <Link href="/blog" target="_blank">Blog</Link>.</p>
       </section>
 
       <SpidermanGIF />
