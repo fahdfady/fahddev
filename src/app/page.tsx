@@ -19,7 +19,7 @@ export default function Home() {
         <ul className="flex flex-col gap-y-3 text-xl font-semibold">
           <li className="flex items-center">
             <Image alt="Oblien logo" src="/oblienlogo.png" width={32} height={32} className="size-8 me-2" />
-            Software Engineer / Co-Founder &nbsp;<a href="https://x.com/BLEU_io" className="text-black dark:text-white font-bold" target="_blank">Oblien</a>
+            Software Engineer / Co-Founder &nbsp;<a href="https://www.oblien.com" className="text-black dark:text-white font-bold" target="_blank">Oblien</a>
           </li>
           <li className="flex items-center">
             <Image alt="BLEU logo" src="/bleulogo.svg" width={32} height={32} className="size-8 me-2" />
