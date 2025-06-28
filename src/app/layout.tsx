@@ -10,6 +10,7 @@ const cairoFont = Cairo({
 export const metadata: Metadata = {
   title: "Fahd Ashour",
   description: "self-taught software engineer exploring React internals, dev tools, Rust, Networking, BLEU Community, cofounder and engineer Oblien.",
+  icons:"/favicon.ico"
 };
 
 export default function RootLayout({
