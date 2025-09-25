@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={`${cairoFont.className} antialiased`}
       >
-        <div className="w-full max-w-screen-lg mx-auto flex min-h-screen flex-col gap-y-4 items-center justify-start p-6 sm:p-8 ">
+        <div className="w-full flex min-h-screen flex-col gap-y-4 items-center justify-start p-6 sm:p-8 ">
           <Navigation />
           {children}
         </div>
