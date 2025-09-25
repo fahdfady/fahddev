@@ -12,6 +12,10 @@ const NavItems: NavItemProps[] = [
     {
         name: "Blog",
         href: "/blog",
+    },
+    {
+        name: "Gallery",
+        href: "/gallery",
     }
 ]
 
