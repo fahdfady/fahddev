@@ -1,0 +1,14 @@
+---
+layout: base.njk
+title: Gallery | Fahd Ashour
+---
+
+<main>
+  <div class="gallery-grid">
+    {% for item in gallery %}
+    <div class="gallery-item">
+      <img src="/public/gallery/{{ item.path }}" alt="{{ item.alt }}" title="{{ item.alt }}">
+    </div>
+    {% endfor %}
+  </div>
+</main>
