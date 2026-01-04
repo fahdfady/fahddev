@@ -6,7 +6,7 @@ title: Fahd Ashour
 <main class="main-content">
   <!-- Hero Section -->
   <section aria-label="Name" class="hero">
-    <h1>Fahd Ashour</h1>
+    <h1>Fahd Ashour فهد عاشور</h1>
     <h3>Software Engineer</h3>
   </section>
 
@@ -43,6 +43,41 @@ title: Fahd Ashour
     <p>Building <a href="https://x.com/BLEU_io" class="bold-blue" target="_blank">BLEU Community</a>, a Discord-based community for people interested in computer science.</p>
     <p>What am I looking forward to do in my career? Learning how Front-end Frameworks works. <a href="https://github.com/fahdfady/yaseer" target="_blank">Building my own Framework</a>, Contributing to open-source projects that I'm genuinely interested in. Passing my knowledge to others via my <a href="https://x.com/fahdashwr" target="_blank">Twitter account</a> and <a href="/blog/">Blog</a>.</p>
     <p><a href="https://drive.google.com/file/d/1kZV7Ing6HF-Ooxt9pXTtllcGGcG1re1-/view?usp=sharing" target="_blank">link to my resume</a></p>
+  </section>
+
+  <!-- Currently Working On Section -->
+  <section aria-label="currently working on" id="working-on" class="working-on">
+    <h2 class="section-header"><a href="#working-on">Currently Working On</a></h2>
+    <div class="working-list">
+      <p>Building <a href="https://github.com/fahdfady/metassr" target="_blank">MetaSSR</a> — exploring server-side rendering patterns</p>
+      <p>🦀 Actively maintaining the <a href="https://github.com/metacall/core" target="_blank">MetaCall Rust port</a></p>
+      <p>My most interesting project right now: <a href="https://github.com/fahdfady/polyglot-api-handler" target="_blank">polyglot-api-handler</a></p>
+      <p>Preparing to create a devlog documenting this journey... but I'm just too busy right now (maybe lazy, most certainly overwhelmed)</p>
+    </div>
+    <p class="contributions-link">
+      <a href="https://gist.github.com/fahdfady/40116fcf0d80567a7ec343e1d06acec1" target="_blank">
+        View my open source contributions →
+      </a>
+    </p>
+
+  </section>
+
+  <!-- I am reading Section -->
+  <section aria-label="reading" id="reading" class="reading-section">
+    <h2 class="section-header"><a href="#reading">I am reading</a></h2>
+    <div class="reading-grid">
+      {% for book in reading %}
+      <a href="{{ book.link }}" class="book-card" target="_blank">
+        <div class="book-cover">
+          <img src="{{ book.image }}" alt="{{ book.title }} cover">
+        </div>
+        <div class="book-info">
+          <h3 class="book-title">{{ book.title }}</h3>
+          <p class="book-author">by {{ book.author }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
   </section>
 
   <!-- Spiderman GIF -->
