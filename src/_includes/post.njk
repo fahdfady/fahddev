@@ -1,0 +1,34 @@
+---
+layout: base.njk
+giscus: true
+---
+
+<main class="blog-post">
+  <article>
+    <header class="post-header">
+      <time datetime="{{ date | dateFormat }}" class="post-date">{{ date | dateFormat }}</time>
+      {% if tags %}
+      <div class="post-tags">
+        {% for tag in tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </header>
+    
+    <h1 class="post-title">{{ title }}</h1>
+    
+    {% if coverImage %}
+    <img src="{{ coverImage }}" alt="Cover image for {{ title }}" class="post-cover">
+    {% endif %}
+    
+    <div class="post-content">
+      {{ content | safe }}
+    </div>
+  </article>
+  
+  <section class="comments-section">
+    <h2>Comments</h2>
+    <div id="giscus-container"></div>
+  </section>
+</main>

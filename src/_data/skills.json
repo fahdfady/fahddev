@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "link": "https://www.typescriptlang.org/",
+        "name": "TypeScript",
+        "category": "language"
+    },
+    {
+        "id": 2,
+        "link": "https://react.dev/",
+        "name": "React",
+        "category": "framework"
+    },
+    {
+        "id": 3,
+        "link": "https://nextjs.org/",
+        "name": "Nextjs",
+        "category": "framework"
+    },
+    {
+        "id": 4,
+        "link": "https://www.rust-lang.org/",
+        "name": "Rust",
+        "category": "language"
+    },
+    {
+        "id": 5,
+        "link": "https://jquery.com/",
+        "name": "Jquery",
+        "category": "framework"
+    },
+    {
+        "id": 6,
+        "link": "https://sass-lang.com/",
+        "name": "SASS",
+        "category": "styling"
+    },
+    {
+        "id": 7,
+        "link": "https://tailwindcss.com/",
+        "name": "tailwind",
+        "category": "styling"
+    },
+    {
+        "id": 8,
+        "link": "https://getbootstrap.com/",
+        "name": "bootstrap",
+        "category": "styling"
+    },
+    {
+        "id": 9,
+        "link": "https://firebase.google.com/",
+        "name": "firebase",
+        "category": "database"
+    },
+    {
+        "id": 10,
+        "link": "https://supabase.com/",
+        "name": "supabase",
+        "category": "database"
+    }
+]

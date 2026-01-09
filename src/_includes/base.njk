@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ title | default("Fahd Ashour") }}</title>
+  <meta name="description" content="{{ description | default('self-taught software engineer exploring React internals, dev tools, Rust, Networking, BLEU Community, cofounder and engineer Oblien.') }}">
+  <link rel="icon" href="/public/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    {% include "nav.njk" %}
+    {{ content | safe }}
+  </div>
+  
+  {% if giscus %}
+  <script src="https://giscus.app/client.js"
+          data-repo="fahdfady/fahddev"
+          data-repo-id="R_kgDOGRjDvA"
+          data-category="General"
+          data-category-id="DIC_kwDOGRjDvM4C0wjz"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="1"
+          data-input-position="top"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+  {% endif %}
+</body>
+</html>

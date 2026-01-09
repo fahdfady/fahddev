@@ -1,0 +1,54 @@
+---
+layout: base.njk
+title: Blog | Fahd Ashour
+description: Explore my blogs about web development, design, and technology.
+---
+
+<main class="blog-page">
+  <header class="blog-header">
+    <h1>Blog</h1>
+    <p>My own thoughts, ideas, and insights, takes on web development, design, and Software</p>
+  </header>
+
+  <section aria-labelledby="blogs-heading">
+    <h2 id="blogs-heading" class="sr-only">Blog Posts</h2>
+
+    {% if collections.posts.length > 0 %}
+    <div class="blog-grid" role="list" aria-label="Blog posts">
+      {% for post in collections.posts %}
+      <a href="{{ post.url }}" class="blog-card" role="listitem">
+        {% if post.data.coverImage %}
+        <div class="blog-card-image">
+          <img src="{{ post.data.coverImage }}" alt="Cover image for {{ post.data.title }}">
+        </div>
+        {% endif %}
+        
+        <div class="blog-card-content">
+          <div class="blog-card-meta">
+            <time datetime="{{ post.data.date | dateFormat }}" class="blog-card-date">
+              {{ post.data.date | dateFormat }}
+            </time>
+          </div>
+          
+          <h3 class="blog-card-title">{{ post.data.title }}</h3>
+          
+          <p class="blog-card-description">{{ post.data.description }}</p>
+          
+          {% if post.data.tags %}
+          <div class="blog-card-tags">
+            {% for tag in post.data.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <h1>no blogs yet, sorry :(</h1>
+    </div>
+    {% endif %}
+  </section>
+</main>

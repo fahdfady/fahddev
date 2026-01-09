@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Designing Data-Intensive Applications",
+        "author": "Martin Kleppmann",
+        "image": "https://dataintensive.net/images/book-cover.png",
+        "link": "https://dataintensive.net/"
+    },
+    {
+        "title": "Calculus",
+        "author": "Michael Spivak",
+        "image": "https://m.media-amazon.com/images/I/31UTRrql0jL._AC_UF1000,1000_QL80_.jpg",
+        "link": "https://www.amazon.com/Calculus-4th-Michael-Spivak/dp/0914098918"
+    }
+]
