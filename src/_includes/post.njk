@@ -27,8 +27,32 @@ giscus: true
     </div>
   </article>
   
-  <section class="comments-section">
-    <h2>Comments</h2>
-    <div id="giscus-container"></div>
+  {% if giscus %}
+  <section class="comments-section" aria-labelledby="comments-title">
+    <div class="comments-card">
+      <div class="comments-header">
+        <h2 id="comments-title">Discussion</h2>
+        <p>Comment with your GitHub account.</p>
+      </div>
+      <div class="giscus-shell">
+        <script src="https://giscus.app/client.js"
+                data-repo="fahdfady/fahddev"
+                data-repo-id="R_kgDOGRjDvA"
+                data-category="General"
+                data-category-id="DIC_kwDOGRjDvM4C0wjz"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="1"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="en"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+        </script>
+      </div>
+    </div>
   </section>
+  {% endif %}
 </main>

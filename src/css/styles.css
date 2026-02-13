@@ -659,13 +659,43 @@ main {
 
 .comments-section {
   margin-top: 3rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--muted);
 }
 
-.comments-section h2 {
-  font-size: 1.5rem;
+.comments-card {
+  border: 1px solid var(--muted);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background: var(--background);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 768px) {
+  .comments-card {
+    padding: 1.5rem;
+  }
+}
+
+.comments-header {
   margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--muted);
+}
+
+.comments-header h2 {
+  font-size: 1.5rem;
+}
+
+.comments-header p {
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+}
+
+.giscus-shell {
+  margin-top: 1rem;
+}
+
+.giscus-shell iframe.giscus-frame {
+  border-radius: 0.5rem;
 }
 
 /* Section padding */
