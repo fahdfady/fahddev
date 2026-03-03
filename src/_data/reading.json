@@ -1,14 +1,20 @@
 [
-    {
-        "title": "Designing Data-Intensive Applications",
-        "author": "Martin Kleppmann",
-        "image": "https://dataintensive.net/images/book-cover.png",
-        "link": "https://dataintensive.net/"
-    },
-    {
-        "title": "Calculus",
-        "author": "Michael Spivak",
-        "image": "https://m.media-amazon.com/images/I/31UTRrql0jL._AC_UF1000,1000_QL80_.jpg",
-        "link": "https://www.amazon.com/Calculus-4th-Michael-Spivak/dp/0914098918"
-    }
+  {
+    "title": "Linkers and Loaders",
+    "author": "John R. Levine",
+    "image": "https://m.media-amazon.com/images/I/41ARzB9roYL._SX342_SY445_ML2_.jpg",
+    "link": "https://www.amazon.com/gp/product/1558604960?ie=UTF8&tag=theinvincibleele&creative=9325&linkCode=as2&creativeASIN=1558604960&linkId=60ef3399471f4ff99ba8904e10668f21"
+  },
+  {
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "image": "https://dataintensive.net/images/book-cover.png",
+    "link": "https://dataintensive.net/"
+  },
+  {
+    "title": "Calculus",
+    "author": "Michael Spivak",
+    "image": "https://m.media-amazon.com/images/I/31UTRrql0jL._AC_UF1000,1000_QL80_.jpg",
+    "link": "https://www.amazon.com/Calculus-4th-Michael-Spivak/dp/0914098918"
+  }
 ]

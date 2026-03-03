@@ -64,9 +64,13 @@ title: Fahd Ashour
     <div class="reading-grid">
       {% for book in reading %}
       <a href="{{ book.link }}" class="book-card" target="_blank">
+        {% if book.image %}
         <div class="book-cover">
           <img src="{{ book.image }}" alt="{{ book.title }} cover">
         </div>
+        {% else %}
+        <div class="book-cover"></div>
+        {% endif %}
         <div class="book-info">
           <h3 class="book-title">{{ book.title }}</h3>
           <p class="book-author">by {{ book.author }}</p>
