@@ -89,13 +89,6 @@ title: Fahd Ashour
     <div class="projects-grid">
       {% for project in projects %}
       <a href="{{ project.link }}" class="project-card" target="_blank">
-        {% if project.image %}
-        <div class="project-image">
-          <img src="{{ project.image }}" alt="{{ project.name }} thumbnail">
-        </div>
-        {% else %}
-        <div class="project-image"></div>
-        {% endif %}
         <h5 class="project-year">{{ project.year }}</h5>
         <h3 class="project-name">{{ project.name }}</h3>
         <p class="project-description">{{ project.description }}</p>

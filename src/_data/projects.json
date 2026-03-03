@@ -2,28 +2,24 @@
     {
         "name": "Lucky Market",
         "year": "2021",
-        "image": "/public/projects/luckymarket.jpg",
         "description": "Freelance project. A platform where you can host your E-store for selling E-products and manage your earnings.",
         "link": "https://luckymarket.net/"
     },
     {
         "name": "react-like library",
         "year": "2025",
-        "image": null,
         "description": "A simulation of how react works for learning purposes. still working on it.",
         "link": "https://github.com/fahdfady/react-from-scratch"
     },
     {
         "name": "Duolingo Clone",
         "year": "2024",
-        "image": "/public/projects/lingo.jpg",
         "description": "A Fullstack Duolingo clone using Nextjs. Made alongside a tutorial",
         "link": "https://lingo-two-chi.vercel.app/"
     },
     {
         "name": "BLEU Website",
         "year": "2025",
-        "image": "/public/projects/bleu.png",
         "description": "A website for a community that I'm co-founding. It's a Discord-based community for people interested in computer science.",
         "link": "https://bleu-website.vercel.app/"
     }

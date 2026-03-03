@@ -1,6 +1,7 @@
 /* CSS Variables */
 :root {
   --background: #ffffff;
+  --background-darker: color-mix(in srgb, var(--background) 98%, #000);
   --foreground: #171717;
   --muted: hsl(220, 14.3%, 95.9%);
   --muted-foreground: hsl(220, 8.9%, 46.1%);
@@ -203,6 +204,7 @@ main {
 
 /* Project Card */
 .project-card {
+  background-color: var(--background);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -213,18 +215,7 @@ main {
 }
 
 .project-card:hover {
-  background-color: transparent;
-}
-
-.project-image {
-  height: 150px;
-  overflow: hidden;
-}
-
-.project-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-color: var(--background-darker);
 }
 
 .project-year {
