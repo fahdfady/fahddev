@@ -58,6 +58,27 @@ title: Fahd Ashour
 
   </section>
 
+  <!-- Bookmarks Section -->
+  <section aria-label="bookmarks" id="bookmarks">
+    <h2 class="section-header"><a href="#bookmarks">Bookmarks</a></h2>
+    <p class="bookmarks-description">things that caught my interest that i think you would like too. Things I recommend you to read.</p>
+    <div class="bookmarks-list">
+      {% for bookmark in bookmarks %}
+      {% if loop.index <= 5 %}
+      <a href="{{ bookmark.url }}" class="bookmark-item" target="_blank" rel="noopener noreferrer">
+        <span class="bookmark-title">{{ bookmark.title }}</span>
+        <span class="bookmark-url">{{ bookmark.url }}</span>
+      </a>
+      {% endif %}
+      {% endfor %}
+    </div>
+    {% if bookmarks.length > 5 %}
+    <p class="bookmarks-all-link">
+      <a href="/bookmarks/">View all bookmarks →</a>
+    </p>
+    {% endif %}
+  </section>
+
   <!-- I am reading Section -->
   <section aria-label="reading" id="reading" class="reading-section">
     <h2 class="section-header"><a href="#reading">I am reading</a></h2>

@@ -348,6 +348,74 @@ main {
   gap: 0.5rem;
 }
 
+/* Bookmarks Section */
+.bookmarks-description {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+  margin-bottom: 1.25rem;
+}
+
+.bookmarks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.bookmark-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.bookmark-item:hover {
+  color: var(--purple-500);
+  background-color: transparent;
+}
+
+.bookmark-item:hover .bookmark-url {
+  color: inherit;
+}
+
+.bookmark-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.bookmark-url {
+  font-size: 0.8125rem;
+  color: var(--muted-foreground);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookmarks-all-link {
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+}
+
+/* Bookmarks Page */
+.bookmarks-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.bookmarks-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.bookmarks-header p {
+  font-size: 1.125rem;
+  color: var(--muted-foreground);
+}
+
+.bookmarks-page .bookmarks-list {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
 /* Reading Section */
 .reading-section {
   display: flex;

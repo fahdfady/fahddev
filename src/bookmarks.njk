@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Bookmarks | Fahd Ashour
+description: Things that caught my interest that I think you would like too.
+---
+
+<main class="bookmarks-page">
+  <header class="bookmarks-header">
+    <h1>Bookmarks</h1>
+    <p>things that caught my interest that i think you would like too. Things I recommend you to read.</p>
+  </header>
+
+  <section aria-label="bookmarks">
+    <div class="bookmarks-list">
+      {% for bookmark in bookmarks %}
+      <a href="{{ bookmark.url }}" class="bookmark-item" target="_blank" rel="noopener noreferrer">
+        <span class="bookmark-title">{{ bookmark.title }}</span>
+        <span class="bookmark-url">{{ bookmark.url }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</main>
