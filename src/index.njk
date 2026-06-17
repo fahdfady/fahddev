@@ -58,26 +58,57 @@ title: Fahd Ashour
 
   </section>
 
-  <!-- Bookmarks Section -->
-  <section aria-label="bookmarks" id="bookmarks">
-    <h2 class="section-header"><a href="#bookmarks">Bookmarks</a></h2>
-    <p class="bookmarks-description">things that caught my interest that i think you would like too. Things I recommend you to read.</p>
-    <div class="bookmarks-list">
-      {% for bookmark in bookmarks %}
-      {% if loop.index <= 5 %}
-      <a href="{{ bookmark.url }}" class="bookmark-item" target="_blank" rel="noopener noreferrer">
-        <span class="bookmark-title">{{ bookmark.title }}</span>
-        <span class="bookmark-url">{{ bookmark.url }}</span>
-      </a>
+  <div class="home-lists-grid">
+    <!-- Blogs Section -->
+    <section aria-label="blogs" id="blogs">
+      <h2 class="section-header"><a href="#blogs">Blogs</a></h2>
+      <div class="bookmarks-list">
+        {% for post in collections.allBlogPosts %}
+        {% if loop.index <= 5 %}
+        <a href="{{ post.url }}" class="bookmark-item" {% if post.data.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <span class="bookmark-title bookmark-title-line">
+            {{ post.data.title }}
+            {% if post.data.external %}{% include "icons/external-link.njk" %}{% endif %}
+          </span>
+          {% if post.data.date and post.data.source %}
+          <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.data.source }} - {{ post.url }}</span>
+          {% elif post.data.date %}
+          <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.url }}</span>
+          {% else %}
+          <span class="bookmark-url">{{ post.url }}</span>
+          {% endif %}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% if collections.allBlogPosts.length > 5 %}
+      <p class="bookmarks-all-link">
+        <a href="/blog/">View all blogs →</a>
+      </p>
       {% endif %}
-      {% endfor %}
-    </div>
-    {% if bookmarks.length > 5 %}
-    <p class="bookmarks-all-link">
-      <a href="/bookmarks/">View all bookmarks →</a>
-    </p>
-    {% endif %}
-  </section>
+    </section>
+
+    <!-- Bookmarks Section -->
+    <section aria-label="bookmarks" id="bookmarks">
+      <h2 class="section-header"><a href="#bookmarks">Bookmarks</a></h2>
+      <p class="bookmarks-description">things that caught my interest that i think you would like too. Things I recommend you to read.</p>
+      <div class="bookmarks-list">
+        {% for bookmark in bookmarks %}
+        {% if loop.index <= 5 %}
+        <a href="{{ bookmark.url }}" class="bookmark-item" target="_blank" rel="noopener noreferrer">
+          <span class="bookmark-title">{{ bookmark.title }}</span>
+          <span class="bookmark-url">{{ bookmark.url }}</span>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% if bookmarks.length > 5 %}
+      <p class="bookmarks-all-link">
+        <a href="/bookmarks/">View all bookmarks →</a>
+      </p>
+      {% endif %}
+    </section>
+  </div>
 
   <!-- I am reading Section -->
   <section aria-label="reading" id="reading" class="reading-section">

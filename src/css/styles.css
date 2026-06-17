@@ -355,6 +355,18 @@ main {
   margin-bottom: 1.25rem;
 }
 
+.home-lists-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .home-lists-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
 .bookmarks-list {
   display: flex;
   flex-direction: column;
@@ -379,6 +391,18 @@ main {
 .bookmark-title {
   font-size: 1.125rem;
   font-weight: 600;
+}
+
+.bookmark-title-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.external-link-icon {
+  width: 0.9em;
+  height: 0.9em;
+  flex-shrink: 0;
 }
 
 .bookmark-url {
@@ -507,91 +531,12 @@ main {
   color: var(--muted-foreground);
 }
 
-/* Blog Grid */
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .blog-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Blog Card */
-.blog-card {
+.blog-list {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--muted);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-decoration: none;
-}
-
-.blog-card:hover {
-  background-color: transparent;
-}
-
-.blog-card-image {
-  height: 12rem;
-  overflow: hidden;
-}
-
-.blog-card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 300ms ease;
-}
-
-.blog-card:hover .blog-card-image img {
-  transform: scale(1.05);
-}
-
-.blog-card-content {
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-}
-
-.blog-card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.blog-card-date {
-  font-size: 0.875rem;
-  color: var(--muted-foreground);
-}
-
-.blog-card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  transition: color 150ms ease;
-}
-
-.blog-card:hover .blog-card-title {
-  color: var(--purple-500);
-}
-
-.blog-card-description {
-  color: var(--muted-foreground);
-  margin-bottom: 1rem;
-  flex-grow: 1;
-}
-
-.blog-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: auto;
+  gap: 0.75rem;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .tag {
