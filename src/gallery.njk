@@ -1,9 +1,15 @@
 ---
 layout: base.njk
 title: Gallery | Fahd Ashour
+description: I share some pictures that might look good to you. Maybe better than instagram?
 ---
 
-<main>
+<main class="gallery-page">
+  <header class="blog-header">
+    <h1>Gallery</h1>
+    <p>I share some pictures that might look good to you. Maybe better than instagram?</p>
+    <p>Right now it's living on the github repo, I'm not sure if i should host it on a blob storage and which one. Hit me up if you have a recommendation.</p>
+  </header>
   <div class="gallery-grid">
     {% for item in gallery %}
     <div class="gallery-item">
