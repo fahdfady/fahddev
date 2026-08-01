@@ -18,6 +18,11 @@ module.exports = function (eleventyConfig) {
     // Year filter
     eleventyConfig.addFilter("year", () => new Date().getFullYear());
 
+    // ISO date filter
+    eleventyConfig.addFilter("toISOString", (dateObj) => {
+        return new Date(dateObj).toISOString();
+    });
+
     // Blog posts collection
     eleventyConfig.addCollection("posts", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
