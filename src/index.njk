@@ -34,10 +34,8 @@ title: Fahd Ashour
 
   <!-- About Section -->
   <section aria-label="about" class="about">
-    <p>Currently learning Computer Science. Interested in Web Development, <a href="https://react.dev">React JS</a>, and <a href="https://rust-lang.org">Rust</a>.</p>
-    <p>Ex-founding SWE <a href="https://x.com/OblienHQ" class="bold-black" target="_blank">Oblien</a>, a tech startup that has upcoming product yet to be announced.</p>
-    <p>Building <a href="https://x.com/BLEU_io" class="bold-blue" target="_blank">BLEU Community</a>, a Discord-based community for people interested in computer science.</p>
-    <p>What am I looking forward to do in my career? Learning how Front-end Frameworks works. <a href="https://github.com/fahdfady/yaseer" target="_blank">Building my own Framework</a>, Contributing to open-source projects that I'm genuinely interested in. Passing my knowledge to others via my <a href="https://x.com/fahdashwr" target="_blank">Twitter account</a> and <a href="/blog/">Blog</a>.</p>
+    <p>A self-taught Software Engineer. Interested in Web Development, Open Source Software, Rust, System Programming.</p>
+    <p>Building <a href="https://x.com/BLEU_io" class="bold-blue" target="_blank">BLEU Community</a>, a community for people interested in computer science, software, open source.</p>
     <p><a href="https://drive.google.com/file/d/1kZV7Ing6HF-Ooxt9pXTtllcGGcG1re1-/view?usp=sharing" target="_blank">link to my resume</a></p>
   </section>
 
@@ -45,7 +43,7 @@ title: Fahd Ashour
   <section aria-label="currently working on" id="working-on" class="working-on">
     <h2 class="section-header"><a href="#working-on">Currently Working On</a></h2>
     <div class="working-list">
-      <p>Building <a href="https://github.com/fahdfady/metassr" target="_blank">MetaSSR</a> — exploring server-side rendering patterns</p>
+      <p>Building <a href="https://github.com/metacall/metassr" target="_blank">MetaSSR</a> — a crazy expermental SSR web framwork for a <solid>new world of polyglot programming!</solid></p>
       <p>🦀 Actively maintaining the <a href="https://github.com/metacall/core" target="_blank">MetaCall Rust port</a></p>
       <p>My most interesting project right now: <a href="https://github.com/fahdfady/polyglot-api-handler" target="_blank">polyglot-api-handler</a></p>
       <p>Preparing to create a devlog documenting this journey... but I'm just too busy right now (maybe lazy, most certainly overwhelmed)</p>
@@ -156,21 +154,21 @@ title: Fahd Ashour
   </section>
 
   <!-- Toolkit Section -->
-  <section aria-label="toolkit" id="toolkit">
-    <h2 class="section-header"><a href="#toolkit">Toolkit</a></h2>
-    
-    <p class="toolkit-intro">I'm comfortable using:</p>
-    
-    <div class="toolkit-grid">
-      {% for skill in skills %}
-      <a href="{{ skill.link }}" target="_blank" rel="noopener noreferrer" class="skill-card">
-        <div class="skill-icon">
-          {% include "icons/" + skill.name + ".njk" %}
-        </div>
-        <div class="skill-name">{{ skill.name }}</div>
-        <span class="skill-category">{{ skill.category }}</span>
-      </a>
-      {% endfor %}
-    </div>
-  </section>
+  <!-- <section aria-label="toolkit" id="toolkit"> -->
+  <!--   <h2 class="section-header"><a href="#toolkit">Toolkit</a></h2> -->
+  <!---->
+  <!--   <p class="toolkit-intro">I'm comfortable using:</p> -->
+  <!---->
+  <!--   <div class="toolkit-grid"> -->
+  <!--     {% for skill in skills %} -->
+  <!--     <a href="{{ skill.link }}" target="_blank" rel="noopener noreferrer" class="skill-card"> -->
+  <!--       <div class="skill-icon"> -->
+  <!--         {% include "icons/" + skill.name + ".njk" %} -->
+  <!--       </div> -->
+  <!--       <div class="skill-name">{{ skill.name }}</div> -->
+  <!--       <span class="skill-category">{{ skill.category }}</span> -->
+  <!--     </a> -->
+  <!--     {% endfor %} -->
+  <!--   </div> -->
+  <!-- </section> -->
 </main>
