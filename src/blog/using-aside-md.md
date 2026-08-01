@@ -2,7 +2,7 @@
 title: "How I used agents to study open-source code"
 date: 2026-06-16
 description: "Earlier this year i was studying some open source code. From projects like: Wild, Linux, binutils, MetaCall. I used this `ASIDE.md to help me, giving the LLM the oppurtiunity to teach me while i *have* to write the answers myself."
-tags:[general, agents, learning, artificial intelligence, education, software engineering, llms, open-source]
+tags: ["General", "Agents", "Learning", "Artificial Intelligence", "Education", "Software Engineering", "LLMs", "Open Source"]
 ---
 
 Earlier this year i was studying some open source code. From projects like: Wild, Linux, binutils, MetaCall. I used this `ASIDE.md` (inspired by my friend [Hossam](https://khe.ro)) to help me, giving the LLM the oppurtiunity to teach me while i *have* to write the answers myself.
