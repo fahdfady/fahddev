@@ -23,6 +23,13 @@ module.exports = function (eleventyConfig) {
         return new Date(dateObj).toISOString();
     });
 
+    // Absolute URL filter for OG images
+    eleventyConfig.addFilter("absoluteUrl", (url) => {
+        if (!url) return url;
+        if (/^https?:\/\//i.test(url) || url.startsWith("//")) return url;
+        return `https://fahdashour.com${url}`;
+    });
+
     // Blog posts collection
     eleventyConfig.addCollection("posts", function (collectionApi) {
         return collectionApi.getFilteredByGlob("src/blog/*.md").sort((a, b) => {
