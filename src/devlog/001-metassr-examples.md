@@ -1,7 +1,7 @@
 ---
 title: "MetaSSR - Added the first Example"
-description: ""
-date: 2026-08-01
+description: "A huge milestone for MetaSSR: We're doing our first example ("Sales Dashboard")\"
+date: 2026-08-02
 tags: ["MetaSSR", "Gsoc26", "OSS", "MetaCall"]
 ---
 
