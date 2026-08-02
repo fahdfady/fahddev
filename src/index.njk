@@ -87,6 +87,36 @@ title: Fahd Ashour
       {% endif %}
     </section>
 
+    <!-- Devlog Section -->
+    <section aria-label="devlog" id="devlog">
+      <h2 class="section-header"><a href="#devlog">Devlog</a></h2>
+      <p class="bookmarks-description">My journey building and contributing to open source. More casual than an article, more honest than a tweet.</p>
+      <div class="bookmarks-list">
+        {% for post in collections.allDevlogPosts %}
+        {% if loop.index <= 5 %}
+        <a href="{{ post.url }}" class="bookmark-item" {% if post.data.external %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          <span class="bookmark-title bookmark-title-line">
+            {{ post.data.title }}
+            {% if post.data.external %}{% include "icons/external-link.njk" %}{% endif %}
+          </span>
+          {% if post.data.date and post.data.source %}
+          <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.data.source }} - {{ post.url }}</span>
+          {% elif post.data.date %}
+          <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.url }}</span>
+          {% else %}
+          <span class="bookmark-url">{{ post.url }}</span>
+          {% endif %}
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% if collections.allDevlogPosts.length > 5 %}
+      <p class="bookmarks-all-link">
+        <a href="/devlog/">View all devlogs →</a>
+      </p>
+      {% endif %}
+    </section>
+
     <!-- Bookmarks Section -->
     <section aria-label="bookmarks" id="bookmarks">
       <h2 class="section-header"><a href="#bookmarks">Bookmarks</a></h2>

@@ -30,6 +30,42 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    // Devlog posts collection
+    eleventyConfig.addCollection("devlogs", function (collectionApi) {
+        return collectionApi.getFilteredByGlob("src/devlog/*.md").sort((a, b) => {
+            return new Date(b.data.date) - new Date(a.data.date);
+        });
+    });
+
+    eleventyConfig.addCollection("allDevlogPosts", function (collectionApi) {
+        const localPosts = collectionApi.getFilteredByGlob("src/devlog/*.md").map((post) => ({
+            url: post.url,
+            data: {
+                ...post.data,
+                external: false
+            }
+        }));
+
+        return [...localPosts].sort((a, b) => {
+            const dateA = a.data.date ? new Date(a.data.date) : null;
+            const dateB = b.data.date ? new Date(b.data.date) : null;
+
+            if (dateA && dateB) {
+                return dateB - dateA;
+            }
+
+            if (dateA) {
+                return -1;
+            }
+
+            if (dateB) {
+                return 1;
+            }
+
+            return 0;
+        });
+    });
+
     eleventyConfig.addCollection("allBlogPosts", function (collectionApi) {
         const localPosts = collectionApi.getFilteredByGlob("src/blog/*.md").map((post) => ({
             url: post.url,

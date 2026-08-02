@@ -1,0 +1,45 @@
+---
+layout: base.njk
+title: Devlog | Fahd Ashour
+description: My devlog documenting my journey building and contributing to open source.
+---
+
+<main class="blog-page">
+  <header class="blog-header">
+    <h1>Devlog</h1>
+    <p>My journey building and contributing to open source. More casual than an article, more honest than a tweet.</p>
+  </header>
+
+  <section aria-labelledby="devlogs-heading">
+    <h2 id="devlogs-heading" class="sr-only">Devlog Posts</h2>
+
+    {% if collections.allDevlogPosts.length > 0 %}
+    <div class="blog-list" role="list" aria-label="Devlog posts">
+      {% for post in collections.allDevlogPosts %}
+      <a
+        href="{{ post.url }}"
+        class="bookmark-item"
+        role="listitem"
+        {% if post.data.external %}target="_blank" rel="noopener noreferrer"{% endif %}
+      >
+        <span class="bookmark-title bookmark-title-line">
+          {{ post.data.title }}
+          {% if post.data.external %}{% include "icons/external-link.njk" %}{% endif %}
+        </span>
+        {% if post.data.date and post.data.source %}
+        <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.data.source }} - {{ post.url }}</span>
+        {% elif post.data.date %}
+        <span class="bookmark-url">{{ post.data.date | dateFormat }} - {{ post.url }}</span>
+        {% else %}
+        <span class="bookmark-url">{{ post.url }}</span>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="empty-state">
+      <h1>no devlogs yet, sorry :(</h1>
+    </div>
+    {% endif %}
+  </section>
+</main>
