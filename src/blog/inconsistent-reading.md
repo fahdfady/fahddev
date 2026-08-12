@@ -3,6 +3,7 @@ title: "I am inconsistent with my reading habits."
 description: "Sharing my Journey, Open-Source contributions, and projects seems necessary for me now"
 date: 2026-08-10
 tags: ["General", "Reading", "Books"]
+coverImage: /public/blog/inconsistent-reading.png
 ---
 
 So starting right into the point, That's the pattern:
