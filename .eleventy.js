@@ -1,5 +1,10 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function (eleventyConfig) {
     const externalBlogs = require("./src/_data/externalBlogs.json");
+
+    // Syntax highlighting for code blocks
+    eleventyConfig.addPlugin(syntaxHighlight);
 
     // Copy static assets
     eleventyConfig.addPassthroughCopy("src/css");
