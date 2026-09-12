@@ -15,7 +15,7 @@ I would leave the discovery of FunctionMesh project for you to do, but AFAIC thi
 
 The main idea is: A polyglot app (think Python + NodeJS application) can be deployed in functions, rather than microservices.
 
-<img height="400" alt="FunctionMesh Preview" src="../../public/devlog/002-function-mesh-preview.png" />
+<img alt="FunctionMesh Preview" src="../../public/devlog/002-function-mesh-preview.png" />
 
 This approach, as crazy as it sounds, might be advantageous in more than a way. But again, It's not my concern to explain how FunctionMesh works. I can leave that for Anas, and you can always ping him if you got any concrens.
 
@@ -28,7 +28,7 @@ The idea was: FunctionMesh already uses Express.js as a webserver. Why don't we 
 
 The structure is not clear at all for me at this point. For instance, you can see the result excalidraw from the brainstorming between me and [Hossam](https://khe.ro) thinking about this problem.
 
-<img height="400" alt="Brainstorming session with Hossam" src="../../public/devlog/002-brainstorm.png" />
+<img alt="Brainstorming session with Hossam" src="../../public/devlog/002-brainstorm.png" />
 
 But I can promise you that i'm working around this idea: I want to get only the backend/server-side part of MetaSSR, to give FunctionMesh the ability to use the api handlers. While still giving FunctionMesh the ability to call my rust MetaCall bindings.
 
