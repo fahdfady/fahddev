@@ -85,10 +85,10 @@ a:hover {
 }
 
 .nav-icon {
-  width: 0.85em;
-  height: 0.85em;
+  width: 14px;
+  height: 14px;
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: -0.125em;
 }
 
 .nav-link:hover {
