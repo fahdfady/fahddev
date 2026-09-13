@@ -84,6 +84,13 @@ a:hover {
   text-decoration-color: transparent;
 }
 
+.nav-icon {
+  width: 0.85em;
+  height: 0.85em;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
 .nav-link:hover {
   background-color: transparent;
 }
