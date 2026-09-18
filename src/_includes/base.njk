@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="max-snippet:-1, noai, noimageai">
   <title>{{ title | default("Fahd Ashour") }}</title>
   <meta name="description" content="{{ description | default('self-taught software engineer. loves open source, Rust, edtech. cofounder of the BLEU Community') }}">
 
@@ -44,6 +45,9 @@
   <div class="container">
     {% include "nav.njk" %}
     {{ content | safe }}
+    <footer class="site-footer">
+      <p>© {{ "now" | year }}{% if page.url != "/policy/" %} · <a href="/policy/">Content & AI Use Policy</a>{% endif %}</p>
+    </footer>
   </div>
   <script src="/js/lightbox.js" defer></script>
 </body>
