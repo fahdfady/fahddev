@@ -22,7 +22,7 @@ There are plans to improve documentation. With two types **Internal Docs** for p
 
 **Deployment**: Right now the state of deployments for MetaSSR sucks.
 
-You can actually deploy a `-t ssg` application on github pages as build artifacts, enjoying our Static-Server-Generation. But that is *not* what MetaSSR is about. The thing is, our setup now is a bit messy to work out-of-the-box. You'd need to:
+You can actually deploy a `-t ssg` application on github pages as build artifacts, enjoying our Static-Site-Generation. But that is *not* what MetaSSR is about. The thing is, our setup now is a bit messy to work out-of-the-box. You'd need to:
 
 - install MetaCall
 - install node/python (whatever runtimes you want, supporting Ruby soon)
