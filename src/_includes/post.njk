@@ -22,6 +22,12 @@ ogType: article
     <div class="post-content">
       {{ content | safe }}
     </div>
+
+    {% if coverImage %}
+    <figure class="post-cover">
+      <img src="{{ coverImage }}" alt="{{ coverImageAlt | default(title) }}" loading="lazy">
+    </figure>
+    {% endif %}
   </article>
   
   {% if giscus %}

@@ -635,10 +635,14 @@ main {
 }
 
 .post-cover {
+  margin: 2.5rem 0 0;
+}
+
+.post-cover img {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  margin-bottom: 2rem;
 }
 
 .post-content {
